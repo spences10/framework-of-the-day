@@ -61,7 +61,8 @@ class App extends React.Component {
             }
           </ul>
         </div>
-        <Order />
+        <Order fishes={this.state.fishes}
+          order={this.state.order} />
         {/* And Pass addFish from here down to Inventory, same for loadSamples */}
         <Inventory
           addFish={this.addFish}
