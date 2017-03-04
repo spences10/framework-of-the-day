@@ -22,15 +22,30 @@ class App extends React.Component {
   }
 
   componentWillMount () {
+    // this runs right before teh App is rednered
     this.ref = base.syncState(`${this.props.params.storeId}/fishes`,
       {
         context: this,
         state: 'fishes'
       })
+
+    // check is there is any order in loca storage
+    const localStorageRef = localStorage.getItem(`order-${this.props.params.storeId}`)
+
+    if (localStorageRef) {
+      // update our App component's order state
+      this.setState({
+        order: JSON.parse(localStorageRef)
+      })
+    }
   }
 
   componentWillUnmount () {
     base.removeBinding(this.ref)
+  }
+
+  componentWillUpdate (nextProps, nextState) {
+    localStorage.setItem(`order-${this.props.params.storeId}`, JSON.stringify(nextState.order))
   }
 
   addFish (fish) {
@@ -74,8 +89,11 @@ class App extends React.Component {
             }
           </ul>
         </div>
-        <Order fishes={this.state.fishes}
-          order={this.state.order} />
+        <Order
+          fishes={this.state.fishes}
+          order={this.state.order}
+          params={this.props.params}
+        />
         {/* And Pass addFish from here down to Inventory, same for loadSamples */}
         <Inventory
           addFish={this.addFish}
