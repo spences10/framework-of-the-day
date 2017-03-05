@@ -11,9 +11,11 @@ class App extends React.Component {
     super()
 
     this.addFish = this.addFish.bind(this)
+    this.removeFish = this.removeFish.bind(this)
     this.updateFish = this.updateFish.bind(this)
     this.loadSamples = this.loadSamples.bind(this)
     this.addToOrder = this.addToOrder.bind(this)
+    this.removeFromOrder = this.removeFromOrder.bind(this)
 
     // get initialState
     this.state = {
@@ -66,6 +68,15 @@ class App extends React.Component {
     this.setState({ fishes })
   }
 
+  removeFish (key) {
+    const fishes = {...this.state.fishes}
+    // when using firebase `delete fishes[key]` will not work as you need auth
+    // so just set it to null instead
+    fishes[key] = null
+    // then update state
+    this.setState({ fishes })
+  }
+
   loadSamples () {
     this.setState({
       fishes: sampleFishes
@@ -77,6 +88,15 @@ class App extends React.Component {
     const order = {...this.state.order}
     // update or add new number of fish ordered
     order[key] = order[key] + 1 || 1 // if it already exists then increment else it's 1
+    // update the state
+    this.setState({ order }) // or order: order
+  }
+
+  removeFromOrder (key) {
+    // take a copy of the state
+    const order = {...this.state.order}
+    // delete order this time not limited by firebase so
+    delete order[key]
     // update the state
     this.setState({ order }) // or order: order
   }
@@ -100,10 +120,12 @@ class App extends React.Component {
           fishes={this.state.fishes}
           order={this.state.order}
           params={this.props.params}
+          removeFromOrder={this.removeFromOrder}
         />
         {/* And Pass addFish from here down to Inventory, same for loadSamples */}
         <Inventory
           addFish={this.addFish}
+          removeFish={this.removeFish}
           loadSamples={this.loadSamples}
           fishes={this.state.fishes}
           updateFish={this.updateFish}
