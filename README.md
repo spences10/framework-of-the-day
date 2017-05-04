@@ -1,5 +1,7 @@
 # Catch of the Day
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/spences10/react-for-beginners.svg)](https://greenkeeper.io/)
+
 My follow along project, deployed here: [https://ns-vokcvesest.now.sh](https://ns-vokcvesest.now.sh)
 
 
