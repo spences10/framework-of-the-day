@@ -7,6 +7,7 @@
     "babel-eslint": "^7.1.1",
     "concurrently": "3.4.0",
     "eslint": "^3.12.2",
+    "eslint-config-spences10": "^0.0.5",
     "eslint-plugin-flowtype": "^2.33.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
@@ -28,8 +29,5 @@
     "eject": "react-scripts eject",
     "styles": "stylus -u autoprefixer-stylus ./src/css/style.styl -o ./src/css/style.css",
     "styles:watch": "stylus -u autoprefixer-stylus -w ./src/css/style.styl -o ./src/css/style.css"
-  },
-  "eslintConfig": {
-    "extends": "./node_modules/react-scripts/.eslintrc"
   }
 }
