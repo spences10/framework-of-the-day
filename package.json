@@ -15,8 +15,8 @@
     "stylus": "0.54.5"
   },
   "dependencies": {
+    "re-base": "3.0.2",
     "history": "4.6.2",
-    "re-base": "3.0.1",
     "react": "15.6.0",
     "react-addons-css-transition-group": "15.6.0",
     "react-dom": "15.6.0",
