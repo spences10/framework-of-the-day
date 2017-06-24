@@ -6,7 +6,7 @@
     "autoprefixer-stylus": "0.14.0",
     "babel-eslint": "^7.1.1",
     "concurrently": "3.5.0",
-    "eslint": "^3.12.2",
+    "eslint": "^4.1.0",
     "eslint-config-spences10": "^0.0.8",
     "eslint-plugin-flowtype": "^2.34.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
