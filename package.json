@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "autoprefixer-stylus": "0.14.0",
-    "babel-eslint": "^7.1.1",
+    "babel-eslint": "^8.0.0",
     "concurrently": "3.5.0",
     "eslint": "^4.1.0",
     "eslint-config-spences10": "^0.0.8",
