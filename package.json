@@ -20,10 +20,12 @@
     "url": "git+https://github.com/spences10/react-for-beginners.git"
   },
   "keywords": [],
-  "author": "Scott Spence <spences10apps@gmail.com> (https://blog.scottspence.me/)",
+  "author":
+    "Scott Spence <spences10apps@gmail.com> (https://blog.scottspence.me/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/spences10/react-for-beginners/issues"
   },
-  "homepage": "https://github.com/spences10/react-for-beginners#readme"
+  "homepage":
+    "https://github.com/spences10/react-for-beginners#readme"
 }
