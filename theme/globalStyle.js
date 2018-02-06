@@ -26,7 +26,7 @@ export const theme = {
 }
 
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Titillium+Web');
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Bungee+Inline');
 
   *, *:before, *:after {
     box-sizing: border-box;
@@ -39,7 +39,7 @@ injectGlobal`
     background-color: #fafafa;
   }
 
-  h1 {
+  h1, h2, h3 {
     font-family: 'Open Sans';
   }
 
