@@ -1,32 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const FrameworkOfTheDay = styled.div`
-  background: ${props => props.theme.white};
-  border: 2px solid ${props => props.theme.black};
+import AddFrameworkForm from './AddFrameworkForm'
+
+const InventoryWrapper = styled.div`
+  grid-area: i;
 `
 
-const FormTitle = styled.h2``
-
-const StoreName = styled.input.attrs({
-  type: 'text',
-  required: true,
-  placeholder: 'Store Name'
-})`
-  width: 100%;
-  text-align: center;
-`
-
-const VisitStore = styled.button.attrs({
-  type: 'submit'
-})`
-  width: 100%;
-  text-align: center;
-`
+const InventoryTitle = styled.h2``
 
 class Inventory extends React.Component {
   render() {
-    return <p>inventory</p>
+    return (
+      <InventoryWrapper>
+        <InventoryTitle>inventory</InventoryTitle>
+        <AddFrameworkForm />
+      </InventoryWrapper>
+    )
   }
 }
 
