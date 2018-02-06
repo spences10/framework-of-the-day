@@ -1,11 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const StoreForm = styled.form`
+const FrameworkOfTheDay = styled.div`
   background: ${props => props.theme.white};
-  max-width: 500px;
-  margin: 50px auto;
-  padding: 2rem;
   border: 2px solid ${props => props.theme.black};
 `
 
@@ -27,16 +24,10 @@ const VisitStore = styled.button.attrs({
   text-align: center;
 `
 
-class StorePicker extends React.Component {
+class Order extends React.Component {
   render() {
-    return (
-      <StoreForm>
-        <FormTitle>Please Enter a Store</FormTitle>
-        <StoreName />
-        <VisitStore>Visit Store 👉</VisitStore>
-      </StoreForm>
-    )
+    return <p>order</p>
   }
 }
 
-export default StorePicker
+export default Order

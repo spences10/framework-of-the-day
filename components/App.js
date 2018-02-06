@@ -1,11 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+import Header from './Header'
+import Order from './Order'
+import Inventory from './Inventory'
 
-const StoreForm = styled.form`
+const FrameworkOfTheDay = styled.div`
   background: ${props => props.theme.white};
-  max-width: 500px;
-  margin: 50px auto;
-  padding: 2rem;
+  border: 2px solid ${props => props.theme.black};
+`
+
+const Menu = styled.div`
+  background: ${props => props.theme.white};
   border: 2px solid ${props => props.theme.black};
 `
 
@@ -27,16 +32,18 @@ const VisitStore = styled.button.attrs({
   text-align: center;
 `
 
-class StorePicker extends React.Component {
+class App extends React.Component {
   render() {
     return (
-      <StoreForm>
-        <FormTitle>Please Enter a Store</FormTitle>
-        <StoreName />
-        <VisitStore>Visit Store 👉</VisitStore>
-      </StoreForm>
+      <FrameworkOfTheDay>
+        <Menu>
+          <Header />
+        </Menu>
+        <Order />
+        <Inventory />
+      </FrameworkOfTheDay>
     )
   }
 }
 
-export default StorePicker
+export default App
