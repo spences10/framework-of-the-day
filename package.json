@@ -1,5 +1,5 @@
 {
-  "name": "create-next-example-app",
+  "name": "framework-of-the-day",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -9,5 +9,21 @@
     "next": "5.0.0",
     "react": "16.2.0",
     "react-dom": "16.2.0"
-  }
+  },
+  "description": "",
+  "version": "1.0.0",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spences10/react-for-beginners.git"
+  },
+  "keywords": [],
+  "author":
+    "Scott Spence <spences10apps@gmail.com> (https://blog.scottspence.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spences10/react-for-beginners/issues"
+  },
+  "homepage":
+    "https://github.com/spences10/react-for-beginners#readme"
 }
