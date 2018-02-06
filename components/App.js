@@ -5,11 +5,19 @@ import Order from './Order'
 import Inventory from './Inventory'
 
 const FrameworkOfTheDay = styled.div`
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: 'h h h h o o o o i i i i';
+
   background: ${props => props.theme.white};
   border: 2px solid ${props => props.theme.black};
 `
 
 const Menu = styled.div`
+  grid-area: h;
+
   background: ${props => props.theme.white};
   border: 2px solid ${props => props.theme.black};
 `
@@ -37,7 +45,7 @@ class App extends React.Component {
     return (
       <FrameworkOfTheDay>
         <Menu>
-          <Header />
+          <Header tagline={'Fresh JS Framework Market'} />
         </Menu>
         <Order />
         <Inventory />

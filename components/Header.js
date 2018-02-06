@@ -1,33 +1,46 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const FrameworkOfTheDay = styled.div`
+const HeaderTop = styled.div`
   background: ${props => props.theme.white};
-  border: 2px solid ${props => props.theme.black};
+  border: 1px solid ${props => props.theme.black};
 `
 
-const FormTitle = styled.h2``
-
-const StoreName = styled.input.attrs({
-  type: 'text',
-  required: true,
-  placeholder: 'Store Name'
-})`
-  width: 100%;
+const Title = styled.h1`
+  margin: 0.5rem 0.5rem -2rem 0.5rem;
+  padding: 0.5rem 0.5rem -2rem 0.5rem;
+  font-family: 'Bungee Inline';
+  font-size: 3rem;
+  text-transform: uppercase;
   text-align: center;
 `
 
-const VisitStore = styled.button.attrs({
-  type: 'submit'
-})`
-  width: 100%;
+const OfThe = styled.span`
+  font-family: 'Bungee Inline';
+  font-size: 1rem;
+  text-align: center;
+  vertical-align: middle;
+`
+
+const Tagline = styled.h3`
+  margin: 0rem 0.5rem 1rem 0.5rem;
+  padding: 0rem 0.5rem 1rem 0.5rem;
   text-align: center;
 `
 
-class Header extends React.Component {
-  render() {
-    return <p>header</p>
-  }
+const Header = props => {
+  return (
+    <HeaderTop>
+      <Title>
+        Framework
+        <OfThe>
+          <span> of</span> <span>the </span>
+        </OfThe>
+        Day
+      </Title>
+      <Tagline>{props.tagline}</Tagline>
+    </HeaderTop>
+  )
 }
 
 export default Header
