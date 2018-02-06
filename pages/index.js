@@ -1,15 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 
 import StorePicker from '../components/StorePicker'
-
-const Title = styled.h1`
-  color: red;
-  font-size: 50px;
-`
+import { theme } from '../theme/globalStyle'
 
 export default () => (
-  <Title>
+  <ThemeProvider theme={theme}>
     <StorePicker />
-  </Title>
+  </ThemeProvider>
 )
