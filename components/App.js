@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { media } from '../theme/globalStyle'
+
 import Header from './Header'
 import Order from './Order'
 import Inventory from './Inventory'
@@ -44,7 +46,13 @@ const VisitStore = styled.button.attrs({
   text-align: center;
 `
 
-const ListOfFrameworks = styled.ul``
+const ListOfFrameworks = styled.ul`
+  margin: 0rem;
+  padding: 0rem;
+  /* display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: auto; */
+`
 
 class App extends React.Component {
   constructor() {
