@@ -62,33 +62,37 @@ class AddFrameworkForm extends React.Component {
       desc: this.desc.value,
       image: this.image.value
     }
-    console.log(framework)
+    this.props.addFramework(framework)
+    this.frameworkForm.reset()
   }
   render() {
     return (
-      <FrameworkEdit onSubmit={e => this.createFramework(e)}>
+      <FrameworkEdit
+        innerRef={input => (this.frameworkForm = input)}
+        onSubmit={e => this.createFramework(e)}
+      >
         <FrameworkInput
-          ref={input => (this.name = input)}
+          innerRef={input => (this.name = input)}
           area={'n'}
           type={'text'}
           placeholder={'Framework Name'}
         />
         <FrameworkInput
-          ref={input => (this.price = input)}
+          innerRef={input => (this.price = input)}
           area={'p'}
           type={'text'}
           placeholder={'Framework Price'}
         />
-        <FrameworkSelect ref={input => (this.status = input)}>
+        <FrameworkSelect innerRef={input => (this.status = input)}>
           <FrameworkSelectOpt>Fresh!</FrameworkSelectOpt>
           <FrameworkSelectOpt>Depreciated!</FrameworkSelectOpt>
         </FrameworkSelect>
         <FrameworkDescription
-          ref={input => (this.desc = input)}
+          innerRef={input => (this.desc = input)}
           placeholder={'Framework Desc'}
         />
         <FrameworkInput
-          ref={input => (this.image = input)}
+          innerRef={input => (this.image = input)}
           area={'i'}
           type={'text'}
           placeholder={'Framework Image'}
