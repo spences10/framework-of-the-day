@@ -6,7 +6,7 @@ const StoreForm = styled.form`
   max-width: 500px;
   margin: 50px auto;
   padding: 2rem;
-  border: 2px solid ${props => props.theme.black};
+  border: 1px solid ${props => props.theme.black};
 `
 
 const FormTitle = styled.h2``
