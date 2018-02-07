@@ -1,8 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+
 import Header from './Header'
 import Order from './Order'
 import Inventory from './Inventory'
+import Framework from './Framework'
+
+import sampleFrameworks from '../sample-frameworks'
 
 const FrameworkOfTheDay = styled.div`
   min-height: 100vh;
@@ -40,12 +44,15 @@ const VisitStore = styled.button.attrs({
   text-align: center;
 `
 
+const ListOfFrameworks = styled.ul``
+
 class App extends React.Component {
   constructor() {
     super()
 
     // bind the addFramework function to the component
     this.addFramework = this.addFramework.bind(this)
+    this.loadSamples = this.loadSamples.bind(this)
 
     // initial state
     this.state = {
@@ -64,14 +71,31 @@ class App extends React.Component {
     this.setState({ frameworks })
   }
 
+  loadSamples() {
+    this.setState({
+      frameworks: sampleFrameworks
+    })
+  }
+
   render() {
     return (
       <FrameworkOfTheDay>
         <Menu>
           <Header tagline={'Fresh JS Framework Market'} />
+          <ListOfFrameworks>
+            {Object.keys(this.state.frameworks).map(key => (
+              <Framework
+                key={key}
+                details={this.state.frameworks[key]}
+              />
+            ))}
+          </ListOfFrameworks>
         </Menu>
         <Order />
-        <Inventory addFramework={this.addFramework} />
+        <Inventory
+          addFramework={this.addFramework}
+          loadSamples={this.loadSamples}
+        />
       </FrameworkOfTheDay>
     )
   }

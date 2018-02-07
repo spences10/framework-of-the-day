@@ -7,6 +7,14 @@ const InventoryWrapper = styled.div`
   grid-area: i;
 `
 
+const AddFrameworks = styled.button.attrs({
+  type: 'submit'
+})`
+  grid-area: a;
+  width: 100%;
+  text-align: center;
+`
+
 const InventoryTitle = styled.h2``
 
 class Inventory extends React.Component {
@@ -15,6 +23,9 @@ class Inventory extends React.Component {
       <InventoryWrapper>
         <InventoryTitle>inventory</InventoryTitle>
         <AddFrameworkForm addFramework={this.props.addFramework} />
+        <AddFrameworks onClick={this.props.loadSamples}>
+          Load Sample Frameworks
+        </AddFrameworks>
       </InventoryWrapper>
     )
   }
