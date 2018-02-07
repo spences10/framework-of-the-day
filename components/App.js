@@ -23,9 +23,7 @@ const FrameworkOfTheDay = styled.div`
 
 const Menu = styled.div`
   grid-area: h;
-
   background: ${props => props.theme.white};
-  border: 2px solid ${props => props.theme.black};
 `
 
 const FormTitle = styled.h2``
