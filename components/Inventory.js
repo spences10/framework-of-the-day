@@ -14,7 +14,7 @@ class Inventory extends React.Component {
     return (
       <InventoryWrapper>
         <InventoryTitle>inventory</InventoryTitle>
-        <AddFrameworkForm />
+        <AddFrameworkForm addFramework={this.props.addFramework} />
       </InventoryWrapper>
     )
   }
