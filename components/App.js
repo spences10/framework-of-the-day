@@ -18,7 +18,31 @@ const FrameworkOfTheDay = styled.div`
   grid-template-areas: 'h h h h o o o o i i i i';
 
   background: ${props => props.theme.white};
-  border: 2px solid ${props => props.theme.black};
+  ${media.giant`
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 'h h h h o o o o i i i i';
+  `};
+  ${media.desktop`
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 'h h h h o o o o i i i i';
+  `};
+  ${media.tablet`
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    'h h h h o o o o'
+    'i i i i';
+  `};
+  ${media.phone`
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+      'h h h h'
+      'o o o o'
+      'i i i i';
+  `};
 `
 
 const Menu = styled.div`
