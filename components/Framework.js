@@ -12,7 +12,7 @@ const FrameworkList = styled.li`
     'image desc desc'
     'image   .  add';
   list-style: none;
-  border: 2px solid ${props => props.theme.black};
+  border: 1px solid ${props => props.theme.black};
   border-radius: 4px;
 `
 const FrameworkImage = styled.img`
@@ -39,22 +39,31 @@ const FrameworkDesc = styled.p`
   padding: 0rem 0.5rem;
   grid-area: desc;
 `
-const AddToOrder = styled.button`
+const AddToOrder = styled.button.attrs({})`
   margin: 0rem 0.5rem;
-  padding: 0rem 0.5rem;
+  padding: 0.1rem 0.5rem;
   grid-area: add;
+  &:disabled {
+    color: #d12028;
+    background: #fff;
+    border-color: #d12028;
+    transform: rotate(-10deg) scale(1.5) translateY(-150%)
+      translateX(-50%);
+  }
 `
 
 class Framework extends React.Component {
   render() {
     const { details } = this.props
+    const isAvailable = details.status === 'available'
+    const buttonText = isAvailable ? 'Add to Order' : 'Depreciated'
     return (
       <FrameworkList>
         <FrameworkImage src={details.image} alt={details.name} />
         <FrameworkName>{details.name}</FrameworkName>
         <FrameworkPrice>{details.price} hrs</FrameworkPrice>
         <FrameworkDesc>{details.desc}</FrameworkDesc>
-        <AddToOrder>Add to Order</AddToOrder>
+        <AddToOrder disabled={!isAvailable}>{buttonText}</AddToOrder>
       </FrameworkList>
     )
   }
