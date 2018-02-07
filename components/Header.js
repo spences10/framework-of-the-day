@@ -10,7 +10,7 @@ const HeaderTop = styled.div`
 `
 
 const Title = styled.h1`
-  margin: 0.5rem 0.5rem -2rem 0.5rem;
+  margin: -2rem 0.5rem -2rem 0.5rem;
   padding: 0.5rem 0.5rem -2rem 0.5rem;
   font-family: 'Bungee Inline';
   font-size: 3rem;
