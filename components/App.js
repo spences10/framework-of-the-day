@@ -41,6 +41,29 @@ const VisitStore = styled.button.attrs({
 `
 
 class App extends React.Component {
+  constructor() {
+    super()
+
+    // bind the addFramework function to the component
+    this.addFramework = this.addFramework.bind(this)
+
+    // initial state
+    this.state = {
+      frameworks: {},
+      order: {}
+    }
+  }
+
+  // used set and update state
+  addFramework(framework) {
+    // spread current state into a var
+    const frameworks = { ...this.state.frameworks }
+    const timestamp = Date.now()
+    frameworks[`framework-${timestamp}`] = framework
+    // set state with new data frameworks: frameworks or just frameworks
+    this.setState({ frameworks })
+  }
+
   render() {
     return (
       <FrameworkOfTheDay>
@@ -48,7 +71,7 @@ class App extends React.Component {
           <Header tagline={'Fresh JS Framework Market'} />
         </Menu>
         <Order />
-        <Inventory />
+        <Inventory addFramework={this.addFramework} />
       </FrameworkOfTheDay>
     )
   }
