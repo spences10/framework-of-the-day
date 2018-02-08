@@ -133,7 +133,10 @@ class App extends React.Component {
             ))}
           </ListOfFrameworks>
         </Menu>
-        <Order />
+        <Order
+          frameworks={this.state.frameworks}
+          order={this.state.order}
+        />
         <Inventory
           addFramework={this.addFramework}
           loadSamples={this.loadSamples}
