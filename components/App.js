@@ -83,6 +83,7 @@ class App extends React.Component {
     // bind the addFramework function to the component
     this.addFramework = this.addFramework.bind(this)
     this.loadSamples = this.loadSamples.bind(this)
+    this.addToOrder = this.addToOrder.bind(this)
 
     // initial state
     this.state = {
@@ -107,6 +108,15 @@ class App extends React.Component {
     })
   }
 
+  addToOrder(key) {
+    // copy state into var
+    const order = { ...this.state.order }
+    // update the order or add new
+    order[key] = order[key] + 1 || 1
+    // update state
+    this.setState({ order })
+  }
+
   render() {
     return (
       <FrameworkOfTheDay>
@@ -116,7 +126,9 @@ class App extends React.Component {
             {Object.keys(this.state.frameworks).map(key => (
               <Framework
                 key={key}
+                index={key}
                 details={this.state.frameworks[key]}
+                addToOrder={this.addToOrder}
               />
             ))}
           </ListOfFrameworks>

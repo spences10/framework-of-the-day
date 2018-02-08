@@ -54,7 +54,7 @@ const AddToOrder = styled.button.attrs({})`
 
 class Framework extends React.Component {
   render() {
-    const { details } = this.props
+    const { details, index } = this.props
     const isAvailable = details.status === 'available'
     const buttonText = isAvailable ? 'Add to Order' : 'Depreciated'
     return (
@@ -63,7 +63,12 @@ class Framework extends React.Component {
         <FrameworkName>{details.name}</FrameworkName>
         <FrameworkPrice>{details.price} hrs</FrameworkPrice>
         <FrameworkDesc>{details.desc}</FrameworkDesc>
-        <AddToOrder disabled={!isAvailable}>{buttonText}</AddToOrder>
+        <AddToOrder
+          onClick={() => this.props.addToOrder(index)}
+          disabled={!isAvailable}
+        >
+          {buttonText}
+        </AddToOrder>
       </FrameworkList>
     )
   }
