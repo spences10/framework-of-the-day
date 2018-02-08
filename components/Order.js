@@ -18,7 +18,18 @@ const OrderList = styled.ul`
   margin: 0rem;
   padding: 0rem;
 `
-const OrderTotal = styled.li``
+
+const OrderItem = styled.li`
+  margin: 1rem 0rem;
+  padding: 1rem 0rem;
+  border-bottom: 1px dashed ${props => props.theme.black};
+`
+
+const OrderTotal = styled.li`
+  margin: 1rem 0rem;
+  padding: 1rem 0rem;
+  border-bottom: 3px solid ${props => props.theme.black};
+`
 
 const VisitStore = styled.button.attrs({
   type: 'submit'
@@ -38,20 +49,20 @@ class Order extends React.Component {
 
     if (!framework || framework.status === 'unavailable') {
       return (
-        <li key={key}>
+        <OrderList key={key}>
           Sorry, {framework ? framework.name : 'framework'} is now
           depreciated!
-        </li>
+        </OrderList>
       )
     }
 
     return (
-      <li key={key}>
+      <OrderItem key={key}>
         <span>
           {count} courses of <strong>{framework.name}</strong>
         </span>
         <span> {formatPrice(count * framework.price)}</span>
-      </li>
+      </OrderItem>
     )
   }
   render() {
