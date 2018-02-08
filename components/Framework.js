@@ -11,7 +11,6 @@ const FrameworkList = styled.li`
     'image name price'
     'image desc desc'
     'image   .  add';
-  list-style: none;
   border: 1px solid ${props => props.theme.black};
   border-radius: 4px;
 `
