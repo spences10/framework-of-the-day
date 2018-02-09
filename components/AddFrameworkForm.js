@@ -84,8 +84,12 @@ class AddFrameworkForm extends React.Component {
           placeholder={'Framework Price'}
         />
         <FrameworkSelect innerRef={input => (this.status = input)}>
-          <FrameworkSelectOpt>Fresh!</FrameworkSelectOpt>
-          <FrameworkSelectOpt>Depreciated!</FrameworkSelectOpt>
+          <FrameworkSelectOpt value="available">
+            Fresh!
+          </FrameworkSelectOpt>
+          <FrameworkSelectOpt value="unavailable">
+            Depreciated!
+          </FrameworkSelectOpt>
         </FrameworkSelect>
         <FrameworkDescription
           innerRef={input => (this.desc = input)}
