@@ -162,6 +162,7 @@ class App extends React.Component {
         <Inventory
           addFramework={this.addFramework}
           loadSamples={this.loadSamples}
+          frameworks={this.state.frameworks}
         />
       </FrameworkOfTheDay>
     )
