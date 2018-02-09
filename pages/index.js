@@ -1,4 +1,5 @@
 import React from 'react'
+// import Head from '../components/head'
 // import Link from 'next/link'
 
 import { ThemeProvider } from 'styled-components'
