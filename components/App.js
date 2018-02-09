@@ -82,6 +82,7 @@ class App extends React.Component {
 
     // bind the addFramework function to the component
     this.addFramework = this.addFramework.bind(this)
+    this.updateFramework = this.updateFramework.bind(this)
     this.loadSamples = this.loadSamples.bind(this)
     this.addToOrder = this.addToOrder.bind(this)
 
@@ -114,6 +115,7 @@ class App extends React.Component {
       JSON.stringify(nextState.order)
     )
   }
+
   // used set and update state
   addFramework(framework) {
     // spread current state into a var
@@ -121,6 +123,12 @@ class App extends React.Component {
     const timestamp = Date.now()
     frameworks[`framework-${timestamp}`] = framework
     // set state with new data frameworks: frameworks or just frameworks
+    this.setState({ frameworks })
+  }
+
+  updateFramework(key, updatedFramework) {
+    const frameworks = { ...this.state.frameworks }
+    frameworks[key] = this.updatedFramework
     this.setState({ frameworks })
   }
 
@@ -163,6 +171,7 @@ class App extends React.Component {
           addFramework={this.addFramework}
           loadSamples={this.loadSamples}
           frameworks={this.state.frameworks}
+          updateFramework={this.updateFramework}
         />
       </FrameworkOfTheDay>
     )
