@@ -92,6 +92,28 @@ class App extends React.Component {
     }
   }
 
+  componentWillMount() {}
+
+  componentDidMount() {
+    const localStorageRef = localStorage.getItem(
+      'framework-of-the-day'
+    )
+
+    if (localStorageRef) {
+      this.setState({
+        order: JSON.parse(localStorageRef)
+      })
+    }
+  }
+
+  componentWillUnmount() {}
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem(
+      'framework-of-the-day',
+      JSON.stringify(nextState.order)
+    )
+  }
   // used set and update state
   addFramework(framework) {
     // spread current state into a var
