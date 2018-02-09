@@ -128,7 +128,7 @@ class App extends React.Component {
 
   updateFramework(key, updatedFramework) {
     const frameworks = { ...this.state.frameworks }
-    frameworks[key] = this.updatedFramework
+    frameworks[key] = updatedFramework
     this.setState({ frameworks })
   }
 
