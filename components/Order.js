@@ -12,7 +12,10 @@ const OrderWrapper = styled.div`
   border-radius: 4px;
 `
 
-const OrderTitle = styled.h2``
+const OrderTitle = styled.h2`
+  text-align: center;
+  text-transform: uppercase;
+`
 
 const OrderList = styled.ul`
   margin: 0rem;
