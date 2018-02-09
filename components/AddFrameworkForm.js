@@ -4,8 +4,10 @@ import styled from 'styled-components'
 const InventoryTitle = styled.h2``
 
 const FrameworkEdit = styled.form`
+  margin: 1rem 0rem;
+  padding: 1rem 0rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 3fr 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas:
     'n p s'
@@ -13,8 +15,6 @@ const FrameworkEdit = styled.form`
     'i i i'
     'a a a';
   background: ${props => props.theme.white};
-  padding: 2rem;
-  border: 1px solid ${props => props.theme.black};
 `
 
 const FrameworkInput = styled.input.attrs({
@@ -25,15 +25,18 @@ const FrameworkInput = styled.input.attrs({
   width: 100%;
   text-align: center;
   border: 1px solid ${props => props.theme.black};
+  /* border-radius: 4px; */
 `
 
 const FrameworkSelect = styled.select`
   grid-area: s;
-  width: 100%;
+  /* width: 100%; */
   text-align: center;
 `
 
-const FrameworkSelectOpt = styled.option``
+const FrameworkSelectOpt = styled.option`
+  text-align: center;
+`
 
 const FrameworkDescription = styled.textarea.attrs({
   placeholder: props => props.placeholder || 'Framework Desc'

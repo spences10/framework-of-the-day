@@ -27,10 +27,10 @@ const InventoryTitle = styled.h2`
 
 const FrameworkEdit = styled.div`
   margin: 1rem 0rem;
-  padding: 1rem 0rem;
+  padding: 1rem;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 3fr 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas:
     'n p s'
@@ -38,33 +38,71 @@ const FrameworkEdit = styled.div`
     'i i i'
     'a a a';
   background: ${props => props.theme.white};
+  border: 1px solid ${props => props.theme.black};
+  border-radius: 4px;
+  justify-items: center;
 `
 
 const FrameworkInput = styled.input.attrs({
   type: props => props.type || 'text',
   placeholder: props => props.placeholder
 })`
+  margin: 0rem 0.5rem;
+  padding: 0rem 0.5rem;
+
   grid-area: ${props => props.area};
   width: 100%;
   text-align: center;
-  border: 1px solid ${props => props.theme.black};
+
+  font-family: Roboto;
+  font-size: 1rem;
+
+  border: 1px dashed ${props => props.theme.white};
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+  background: ${props => props.theme.white};
+  border-radius: 2px;
 `
 
 const FrameworkSelect = styled.select`
+  margin: 0rem 0.5rem;
+  padding: 0rem 0.5rem;
+
   grid-area: s;
   width: 100%;
   text-align: center;
+
+  font-family: Roboto;
+  font-size: 1rem;
+
+  border: 1px dashed ${props => props.theme.white};
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+  background: ${props => props.theme.white};
+  border-radius: 2px;
 `
 
-const FrameworkSelectOpt = styled.option``
+const FrameworkSelectOpt = styled.option`
+  font-family: Roboto;
+  font-size: 1rem;
+`
 
 const FrameworkDescription = styled.textarea.attrs({
   placeholder: props => props.placeholder || 'Framework Desc'
 })`
+  margin: 0rem 0.5rem;
+  padding: 0rem 0.5rem;
+
   grid-area: d;
   width: 100%;
   text-align: center;
   resize: none;
+
+  font-family: Roboto;
+  font-size: 1rem;
+
+  border: 1px dashed ${props => props.theme.white};
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+  background: ${props => props.theme.white};
+  border-radius: 2px;
 `
 
 class Inventory extends React.Component {

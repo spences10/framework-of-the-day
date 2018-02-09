@@ -13,10 +13,11 @@ const Title = styled.h1`
   margin: -2rem 0.5rem -2rem 0.5rem;
   padding: 0.5rem 0.5rem -2rem 0.5rem;
   font-family: 'Bungee Inline';
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 100;
   text-transform: uppercase;
   text-align: center;
+  white-space: nowrap;
 `
 
 const OfThe = styled.span`
