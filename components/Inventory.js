@@ -81,95 +81,60 @@ class Inventory extends React.Component {
       ...framework,
       [e.target.name]: e.target.value
     }
+
     this.props.updateFramework(key, updatedFramework)
   }
 
   renderInventory(key) {
     const framework = this.props.frameworks[key]
     return (
-      <div key={key}>
-        <input
-          type="text"
+      <FrameworkEdit key={key}>
+        <FrameworkInput
+          area={'n'}
+          type={'text'}
           name="name"
           value={framework.name}
-          placeholder="Framework Name"
+          placeholder={'Framework Name'}
           onChange={e => this.handleChange(e, key)}
         />
-        <input
-          type="text"
+        <FrameworkInput
+          area={'p'}
+          type={'text'}
           name="price"
           value={framework.price}
-          placeholder="Framework Price"
+          placeholder={'Framework Price'}
+          onChange={e => this.handleChange(e, key)}
         />
-        <select
-          type="text"
+        <FrameworkSelect
+          type={'text'}
           name="status"
           value={framework.status}
-          placeholder="Framework Status"
+          placeholder={'Framework Status'}
+          onChange={e => this.handleChange(e, key)}
         >
-          <option value="available">Fresh!</option>
-          <option value="unavailable">Sold Out!</option>
-        </select>
-        <textarea
-          type="text"
+          <FrameworkSelectOpt value="available">
+            Fresh!
+          </FrameworkSelectOpt>
+          <FrameworkSelectOpt value="unavailable">
+            Depreciated!
+          </FrameworkSelectOpt>
+        </FrameworkSelect>
+        <FrameworkDescription
+          type={'text'}
           name="desc"
           value={framework.desc}
-          placeholder="Framework Desc"
+          placeholder={'Framework Desc'}
+          onChange={e => this.handleChange(e, key)}
         />
-        <input
-          type="text"
+        <FrameworkInput
+          area={'i'}
+          type={'text'}
           name="image"
           value={framework.image}
-          placeholder="Framework Image"
+          placeholder={'Framework Image'}
+          onChange={e => this.handleChange(e, key)}
         />
-      </div>
-      // <FrameworkEdit key={key}>
-      //   <FrameworkInput
-      //     area={'n'}
-      //     type={'text'}
-      //     name="name"
-      //     value={framework.name}
-      //     placeholder={'Framework Name'}
-      //     onChange={e => this.handleChange(e, key)}
-      //   />
-      //   <FrameworkInput
-      //     area={'p'}
-      //     type={'text'}
-      //     name="price"
-      //     value={framework.price}
-      //     placeholder={'Framework Price'}
-      //     onChange={e => this.handleChange(e, key)}
-      //   />
-      //   <FrameworkSelect
-      //     type={'text'}
-      //     name="status"
-      //     value={framework.status}
-      //     placeholder={'Framework Status'}
-      //     onChange={e => this.handleChange(e, key)}
-      //   >
-      //     <FrameworkSelectOpt value="available">
-      //       Fresh!
-      //     </FrameworkSelectOpt>
-      //     <FrameworkSelectOpt value="unavailable">
-      //       Depreciated!
-      //     </FrameworkSelectOpt>
-      //   </FrameworkSelect>
-      //   <FrameworkDescription
-      //     type={'text'}
-      //     name="desc"
-      //     value={framework.desc}
-      //     placeholder={'Framework Desc'}
-      //     onChange={e => this.handleChange(e, key)}
-      //   />
-      //   <FrameworkInput
-      //     area={'i'}
-      //     type={'text'}
-      //     name="image"
-      //     value={framework.image}
-      //     placeholder={'Framework Image'}
-      //     onChange={e => this.handleChange(e, key)}
-      //   />
-      // </FrameworkEdit>
+      </FrameworkEdit>
     )
   }
 
