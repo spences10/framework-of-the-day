@@ -71,48 +71,105 @@ class Inventory extends React.Component {
   constructor() {
     super()
     this.renderInventory = this.renderInventory.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
+
+  handleChange(e, key) {
+    const framework = this.props.frameworks[key]
+
+    const updatedFramework = {
+      ...framework,
+      [e.target.name]: e.target.value
+    }
+    this.props.updateFramework(key, updatedFramework)
+  }
+
   renderInventory(key) {
     const framework = this.props.frameworks[key]
     return (
-      <FrameworkEdit key={key}>
-        <FrameworkInput
-          area={'n'}
-          type={'text'}
+      <div key={key}>
+        <input
+          type="text"
           name="name"
           value={framework.name}
+          placeholder="Framework Name"
+          onChange={e => this.handleChange(e, key)}
         />
-        <FrameworkInput
-          area={'p'}
-          type={'text'}
+        <input
+          type="text"
           name="price"
           value={framework.price}
+          placeholder="Framework Price"
         />
-        <FrameworkSelect
-          type={'text'}
+        <select
+          type="text"
           name="status"
           value={framework.status}
+          placeholder="Framework Status"
         >
-          <FrameworkSelectOpt value="available">
-            Fresh!
-          </FrameworkSelectOpt>
-          <FrameworkSelectOpt value="unavailable">
-            Depreciated!
-          </FrameworkSelectOpt>
-        </FrameworkSelect>
-        <FrameworkDescription
-          type={'text'}
+          <option value="available">Fresh!</option>
+          <option value="unavailable">Sold Out!</option>
+        </select>
+        <textarea
+          type="text"
           name="desc"
           value={framework.desc}
+          placeholder="Framework Desc"
         />
-        <FrameworkInput
-          area={'i'}
-          type={'text'}
+        <input
+          type="text"
           name="image"
           value={framework.image}
+          placeholder="Framework Image"
         />
-        {/* <AddItem>Add Item</AddItem> */}
-      </FrameworkEdit>
+      </div>
+      // <FrameworkEdit key={key}>
+      //   <FrameworkInput
+      //     area={'n'}
+      //     type={'text'}
+      //     name="name"
+      //     value={framework.name}
+      //     placeholder={'Framework Name'}
+      //     onChange={e => this.handleChange(e, key)}
+      //   />
+      //   <FrameworkInput
+      //     area={'p'}
+      //     type={'text'}
+      //     name="price"
+      //     value={framework.price}
+      //     placeholder={'Framework Price'}
+      //     onChange={e => this.handleChange(e, key)}
+      //   />
+      //   <FrameworkSelect
+      //     type={'text'}
+      //     name="status"
+      //     value={framework.status}
+      //     placeholder={'Framework Status'}
+      //     onChange={e => this.handleChange(e, key)}
+      //   >
+      //     <FrameworkSelectOpt value="available">
+      //       Fresh!
+      //     </FrameworkSelectOpt>
+      //     <FrameworkSelectOpt value="unavailable">
+      //       Depreciated!
+      //     </FrameworkSelectOpt>
+      //   </FrameworkSelect>
+      //   <FrameworkDescription
+      //     type={'text'}
+      //     name="desc"
+      //     value={framework.desc}
+      //     placeholder={'Framework Desc'}
+      //     onChange={e => this.handleChange(e, key)}
+      //   />
+      //   <FrameworkInput
+      //     area={'i'}
+      //     type={'text'}
+      //     name="image"
+      //     value={framework.image}
+      //     placeholder={'Framework Image'}
+      //     onChange={e => this.handleChange(e, key)}
+      //   />
+      // </FrameworkEdit>
     )
   }
 
