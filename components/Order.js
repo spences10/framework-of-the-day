@@ -46,6 +46,7 @@ class Order extends React.Component {
     super()
     this.renderOrder = this.renderOrder.bind(this)
   }
+
   renderOrder(key) {
     const framework = this.props.frameworks[key]
     const count = this.props.order[key]
