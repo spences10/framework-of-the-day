@@ -1,35 +1,38 @@
 {
-  "name": "cotd",
-  "version": "0.0.1",
-  "private": true,
-  "devDependencies": {
-    "autoprefixer-stylus": "0.14.0",
-    "babel-eslint": "^8.0.1",
-    "concurrently": "3.5.1",
-    "eslint": "^4.8.0",
-    "eslint-plugin-flowtype": "^2.29.1",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.5.0",
-    "react-scripts": "1.1.1",
-    "stylus": "0.54.5"
-  },
-  "dependencies": {
-    "history": "4.7.2",
-    "re-base": "3.2.2",
-    "react": "16.2.0",
-    "react-addons-css-transition-group": "15.6.2",
-    "react-dom": "16.2.0",
-    "react-router": "4.2.0"
+  "name": "framework-of-the-day",
+  "now": {
+    "name": "fotd"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "watch": "concurrently --names \"webpack, stylus\" --prefix name \"npm run start\" \"npm run styles:watch\"",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject",
-    "styles": "stylus -u autoprefixer-stylus ./src/css/style.styl -o ./src/css/style.css",
-    "styles:watch": "stylus -u autoprefixer-stylus -w ./src/css/style.styl -o ./src/css/style.css"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "deploy": "now -e NODE_ENV=production --token $NOW_TOKEN --npm",
+    "alias:dev":
+      "now alias framework-of-the-day.now.sh --token $NOW_TOKEN",
+    "alias:prod": "now alias fotd.scottspence.me --token $NOW_TOKEN"
   },
-  "eslintConfig": {
-    "extends": "./node_modules/react-scripts/.eslintrc"
-  }
+  "dependencies": {
+    "babel-plugin-styled-components": "1.5.0",
+    "next": "5.0.0",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "styled-components": "3.1.6"
+  },
+  "description": "",
+  "version": "1.0.0",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spences10/react-for-beginners.git"
+  },
+  "keywords": [],
+  "author":
+    "Scott Spence <spences10apps@gmail.com> (https://blog.scottspence.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spences10/react-for-beginners/issues"
+  },
+  "homepage":
+    "https://github.com/spences10/react-for-beginners#readme"
 }
