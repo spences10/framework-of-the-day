@@ -1,11 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import {
+  FrameworkInput,
+  FrameworkSelect,
+  FrameworkSelectOpt,
+  FrameworkDescription
+} from '../theme/components'
+
 const InventoryTitle = styled.h2``
 
 const FrameworkEdit = styled.form`
   margin: 1rem 0rem;
-  padding: 1rem 0rem;
+  padding: 1rem;
+
   display: grid;
   grid-template-columns: 3fr 1fr 1fr;
   grid-template-rows: auto;
@@ -15,36 +23,9 @@ const FrameworkEdit = styled.form`
     'i i i'
     'a a a';
   background: ${props => props.theme.white};
-`
-
-const FrameworkInput = styled.input.attrs({
-  type: props => props.type || 'text',
-  placeholder: props => props.placeholder
-})`
-  grid-area: ${props => props.area};
-  width: 100%;
-  text-align: center;
   border: 1px solid ${props => props.theme.black};
-  /* border-radius: 4px; */
-`
-
-const FrameworkSelect = styled.select`
-  grid-area: s;
-  /* width: 100%; */
-  text-align: center;
-`
-
-const FrameworkSelectOpt = styled.option`
-  text-align: center;
-`
-
-const FrameworkDescription = styled.textarea.attrs({
-  placeholder: props => props.placeholder || 'Framework Desc'
-})`
-  grid-area: d;
-  width: 100%;
-  text-align: center;
-  resize: none;
+  border-radius: 4px;
+  justify-items: center;
 `
 
 const AddItem = styled.button.attrs({
