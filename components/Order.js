@@ -52,12 +52,17 @@ class Order extends React.Component {
   renderOrder(key) {
     const framework = this.props.frameworks[key]
     const count = this.props.order[key]
+    const removeButton = (
+      <button onClick={() => this.props.removeFromOrder(key)}>
+        &times;
+      </button>
+    )
 
     if (!framework || framework.status === 'unavailable') {
       return (
         <OrderList key={key}>
           Sorry, {framework ? framework.name : 'framework'} is now
-          depreciated!
+          depreciated!{removeButton}
         </OrderList>
       )
     }
@@ -66,6 +71,7 @@ class Order extends React.Component {
       <OrderItem key={key}>
         <span>
           {count} courses of <strong>{framework.name}</strong>
+          {removeButton}
         </span>
         <span> {formatPrice(count * framework.price)}</span>
       </OrderItem>

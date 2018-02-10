@@ -28,6 +28,12 @@ const AddFrameworks = StyledButton.extend.attrs({
   text-align: center;
 `
 
+const RemoveFramework = StyledButton.extend.attrs({
+  type: 'submit'
+})`
+
+`
+
 const InventoryTitle = styled.h2`
   text-align: center;
   text-transform: uppercase;
@@ -118,6 +124,11 @@ class Inventory extends React.Component {
           placeholder={'Framework Image'}
           onChange={e => this.handleChange(e, key)}
         />
+        <RemoveFramework
+          onClick={e => this.props.removeFramework(key)}
+        >
+          Remove Framework
+        </RemoveFramework>
       </FrameworkList>
     )
   }

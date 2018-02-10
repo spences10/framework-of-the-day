@@ -84,8 +84,10 @@ class App extends React.Component {
     // bind the addFramework function to the component
     this.addFramework = this.addFramework.bind(this)
     this.updateFramework = this.updateFramework.bind(this)
+    this.removeFramework = this.removeFramework.bind(this)
     this.loadSamples = this.loadSamples.bind(this)
     this.addToOrder = this.addToOrder.bind(this)
+    this.removeFromOrder = this.removeFromOrder.bind(this)
 
     // initial state
     this.state = {
@@ -133,6 +135,12 @@ class App extends React.Component {
     this.setState({ frameworks })
   }
 
+  removeFramework(key) {
+    const frameworks = { ...this.state.frameworks }
+    delete frameworks[key]
+    this.setState({ frameworks })
+  }
+
   loadSamples() {
     this.setState({
       frameworks: sampleFrameworks
@@ -145,6 +153,12 @@ class App extends React.Component {
     // update the order or add new
     order[key] = order[key] + 1 || 1
     // update state
+    this.setState({ order })
+  }
+
+  removeFromOrder(key) {
+    const order = { ...this.state.order }
+    delete order[key]
     this.setState({ order })
   }
 
@@ -167,12 +181,14 @@ class App extends React.Component {
         <Order
           frameworks={this.state.frameworks}
           order={this.state.order}
+          removeFromOrder={this.removeFromOrder}
         />
         <Inventory
           addFramework={this.addFramework}
           loadSamples={this.loadSamples}
           frameworks={this.state.frameworks}
           updateFramework={this.updateFramework}
+          removeFramework={this.removeFramework}
         />
       </FrameworkOfTheDay>
     )
