@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { StyledButton } from '../theme/components'
+
 import { formatPrice } from '../helpers'
 
 const OrderWrapper = styled.div`
@@ -34,7 +36,7 @@ const OrderTotal = styled.li`
   border-bottom: 3px solid ${props => props.theme.black};
 `
 
-const VisitStore = styled.button.attrs({
+const VisitStore = StyledButton.extend.attrs({
   type: 'submit'
 })`
   width: 100%;
@@ -50,12 +52,17 @@ class Order extends React.Component {
   renderOrder(key) {
     const framework = this.props.frameworks[key]
     const count = this.props.order[key]
+    const removeButton = (
+      <button onClick={() => this.props.removeFromOrder(key)}>
+        &times;
+      </button>
+    )
 
     if (!framework || framework.status === 'unavailable') {
       return (
         <OrderList key={key}>
           Sorry, {framework ? framework.name : 'framework'} is now
-          depreciated!
+          depreciated!{removeButton}
         </OrderList>
       )
     }
@@ -64,6 +71,7 @@ class Order extends React.Component {
       <OrderItem key={key}>
         <span>
           {count} courses of <strong>{framework.name}</strong>
+          {removeButton}
         </span>
         <span> {formatPrice(count * framework.price)}</span>
       </OrderItem>
