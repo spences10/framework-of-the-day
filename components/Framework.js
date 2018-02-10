@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { StyledButton } from '../theme/components'
+
 const FrameworkList = styled.li`
   margin: 1rem;
   padding: 1rem;
@@ -38,7 +40,7 @@ const FrameworkDesc = styled.p`
   padding: 0rem 0.5rem;
   grid-area: desc;
 `
-const AddToOrder = styled.button.attrs({})`
+const AddToOrder = StyledButton.extend.attrs({})`
   margin: 0rem 0.5rem;
   padding: 0.1rem 0.5rem;
   grid-area: add;

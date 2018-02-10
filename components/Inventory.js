@@ -7,7 +7,8 @@ import {
   FrameworkInput,
   FrameworkSelect,
   FrameworkSelectOpt,
-  FrameworkDescription
+  FrameworkDescription,
+  StyledButton
 } from '../theme/components'
 
 const InventoryWrapper = styled.div`
@@ -19,7 +20,7 @@ const InventoryWrapper = styled.div`
   border-radius: 4px;
 `
 
-const AddFrameworks = styled.button.attrs({
+const AddFrameworks = StyledButton.extend.attrs({
   type: 'submit'
 })`
   grid-area: a;

@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { StyledButton } from '../theme/components'
+
 const StoreForm = styled.form`
   background: ${props => props.theme.white};
   max-width: 500px;
@@ -20,7 +22,7 @@ const StoreName = styled.input.attrs({
   text-align: center;
 `
 
-const VisitStore = styled.button.attrs({
+const VisitStore = StyledButton.extend.attrs({
   type: 'submit'
 })`
   width: 100%;

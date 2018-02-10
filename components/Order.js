@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { StyledButton } from '../theme/components'
+
 import { formatPrice } from '../helpers'
 
 const OrderWrapper = styled.div`
@@ -34,7 +36,7 @@ const OrderTotal = styled.li`
   border-bottom: 3px solid ${props => props.theme.black};
 `
 
-const VisitStore = styled.button.attrs({
+const VisitStore = StyledButton.extend.attrs({
   type: 'submit'
 })`
   width: 100%;

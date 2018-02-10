@@ -61,3 +61,13 @@ export const FrameworkDescription = styled.textarea.attrs({
   background: ${props => props.theme.white};
   border-radius: 2px;
 `
+
+export const StyledButton = styled.button`
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  cursor: pointer;
+  background: ${props => props.theme.white};
+  border: 1px solid ${props => props.theme.black};
+  border-radius: 4px;
+`

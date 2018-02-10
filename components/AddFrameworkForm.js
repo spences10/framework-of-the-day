@@ -5,7 +5,8 @@ import {
   FrameworkInput,
   FrameworkSelect,
   FrameworkSelectOpt,
-  FrameworkDescription
+  FrameworkDescription,
+  StyledButton
 } from '../theme/components'
 
 const InventoryTitle = styled.h2``
@@ -28,7 +29,7 @@ const FrameworkEdit = styled.form`
   justify-items: center;
 `
 
-const AddItem = styled.button.attrs({
+const AddItem = StyledButton.extend.attrs({
   type: 'submit'
 })`
   grid-area: a;

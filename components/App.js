@@ -8,6 +8,7 @@ import Order from './Order'
 import Inventory from './Inventory'
 import Framework from './Framework'
 
+import { StyledButton } from '../theme/components'
 import sampleFrameworks from '../sample-frameworks'
 
 const FrameworkOfTheDay = styled.div`
@@ -61,7 +62,7 @@ const StoreName = styled.input.attrs({
   text-align: center;
 `
 
-const VisitStore = styled.button.attrs({
+const VisitStore = StyledButton.extend.attrs({
   type: 'submit'
 })`
   width: 100%;
