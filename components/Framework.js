@@ -12,7 +12,7 @@ const FrameworkList = styled.li`
   grid-template-areas:
     'image name price'
     'image desc desc'
-    'image   .  add';
+    'image add  add';
   border: 1px solid ${props => props.theme.black};
   border-radius: 4px;
 `

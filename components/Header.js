@@ -17,7 +17,7 @@ const Title = styled.h1`
   font-weight: 100;
   text-transform: uppercase;
   text-align: center;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 `
 
 const OfThe = styled.span`
