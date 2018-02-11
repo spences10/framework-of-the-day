@@ -7,24 +7,24 @@ const HeaderTop = styled.div`
   background: ${props => props.theme.white};
   border: 1px solid ${props => props.theme.black};
   border-radius: 4px;
+  text-align: center;
+  vertical-align: middle;
 `
 
 const Title = styled.h1`
-  margin: -2rem 0.5rem -2rem 0.5rem;
-  padding: 0.5rem 0.5rem -2rem 0.5rem;
+  margin-top: ${props => `${props.marginTop}rem`};
+  margin-bottom: ${props => `${props.marginBottom}rem`};
+  /* margin: 0.5rem 0.5rem -2rem 0.5rem; */
+  /* padding: 0.5rem 0.5rem -2rem 0.5rem; */
   font-family: 'Bungee Inline';
   font-size: 2rem;
   font-weight: 100;
   text-transform: uppercase;
-  text-align: center;
-  /* white-space: nowrap; */
 `
 
 const OfThe = styled.span`
   font-family: 'Bungee Inline';
   font-size: 1rem;
-  text-align: center;
-  vertical-align: middle;
 `
 
 const Tagline = styled.h3`
@@ -36,11 +36,13 @@ const Tagline = styled.h3`
 const Header = props => {
   return (
     <HeaderTop>
-      <Title>
+      <Title marginTop={0.5} marginBottom={-2}>
         Framework
-        <OfThe>
-          <span> of</span> <span>the </span>
-        </OfThe>
+      </Title>
+      <OfThe>
+        <span> of</span> <span>the </span>
+      </OfThe>
+      <Title marginTop={-2} marginBottom={0.5}>
         Day
       </Title>
       <Tagline>{props.tagline}</Tagline>

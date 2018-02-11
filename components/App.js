@@ -12,29 +12,37 @@ import { StyledButton } from '../theme/components'
 import sampleFrameworks from '../sample-frameworks'
 
 const FrameworkOfTheDay = styled.div`
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto;
   grid-template-areas: 'h h h h o o o o i i i i';
-
   background: ${props => props.theme.white};
+  background: papayawhip;
+
   ${media.giant`
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
-    grid-template-areas: 'h h h h o o o o i i i i';
+    grid-template-areas: 
+      'h h h h o o o o i i i i';
+    background: goldenrod;
   `};
   ${media.desktop`
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto;
-    grid-template-areas: 'h h h h o o o o i i i i';
-  `};
-  ${media.tablet`
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-template-areas: 
-    'h h h h o o o o'
-    'i i i i';
+      'h h h h o o o o'
+      'i i i i . . . .';
+    background: dodgerblue;
+  `};
+  ${media.tablet`
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+      'h h h h'
+      'o o o o'
+      'i i i i';
+    background: mediumseagreen;
   `};
   ${media.phone`
     grid-template-columns: repeat(3, 1fr);
@@ -43,12 +51,12 @@ const FrameworkOfTheDay = styled.div`
       'h h h h'
       'o o o o'
       'i i i i';
+      background: palevioletred;
   `};
 `
 
 const Menu = styled.div`
   grid-area: h;
-  background: ${props => props.theme.white};
 `
 
 const FormTitle = styled.h2``
