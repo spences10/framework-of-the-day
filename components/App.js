@@ -115,6 +115,7 @@ class App extends React.Component {
       this.setState({
         order: JSON.parse(localStorageRef)
       })
+      this.loadSamples()
     }
   }
 
