@@ -31,7 +31,9 @@ const AddFrameworks = StyledButton.extend.attrs({
 const RemoveFramework = StyledButton.extend.attrs({
   type: 'submit'
 })`
-
+  grid-area: r;
+  width: 100%;
+  text-align: center;
 `
 
 const InventoryTitle = styled.h2`
@@ -50,7 +52,7 @@ const FrameworkList = styled.div`
     'n p s'
     'd d d'
     'i i i'
-    'a a a';
+    'r r r';
   background: ${props => props.theme.white};
   border: 1px solid ${props => props.theme.black};
   border-radius: 4px;

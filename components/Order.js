@@ -43,6 +43,16 @@ const VisitStore = StyledButton.extend.attrs({
   text-align: center;
 `
 
+const RemoveButton = styled.button`
+  border: 0px;
+  background: ${props => props.theme.white};
+  cursor: pointer;
+  &:hover {
+    background: ${props => props.theme.yellow};
+  }
+  border-radius: 50px;
+`
+
 class Order extends React.Component {
   constructor() {
     super()
@@ -52,17 +62,16 @@ class Order extends React.Component {
   renderOrder(key) {
     const framework = this.props.frameworks[key]
     const count = this.props.order[key]
-    const removeButton = (
-      <button onClick={() => this.props.removeFromOrder(key)}>
-        &times;
-      </button>
-    )
 
     if (!framework || framework.status === 'unavailable') {
       return (
         <OrderList key={key}>
           Sorry, {framework ? framework.name : 'framework'} is now
-          depreciated!{removeButton}
+          depreciated!<RemoveButton
+            onClick={() => this.props.removeFromOrder(key)}
+          >
+            &times;
+          </RemoveButton>
         </OrderList>
       )
     }
@@ -71,7 +80,11 @@ class Order extends React.Component {
       <OrderItem key={key}>
         <span>
           {count} courses of <strong>{framework.name}</strong>
-          {removeButton}
+          <RemoveButton
+            onClick={() => this.props.removeFromOrder(key)}
+          >
+            &times;
+          </RemoveButton>
         </span>
         <span> {formatPrice(count * framework.price)}</span>
       </OrderItem>
