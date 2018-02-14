@@ -40,16 +40,16 @@ const FrameworkDesc = styled.p`
   padding: 0rem 0.5rem;
   grid-area: desc;
 `
-const AddToOrder = StyledButton.extend.attrs({})`
+const AddToOrder = StyledButton.extend`
   margin: 0rem 0.5rem;
   padding: 0.1rem 0.5rem;
   grid-area: add;
   &:disabled {
-    color: #d12028;
+    color: ${props => props.theme.redViolet};
     background: #fff;
-    border-color: #d12028;
-    transform: rotate(-10deg) scale(1.5) translateY(-150%)
-      translateX(-50%);
+    border-color: ${props => props.theme.redViolet};
+    transform: rotate(-10deg) scale(1.5) translateY(-100%)
+      translateX(-25%);
   }
 `
 
