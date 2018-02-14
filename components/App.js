@@ -18,14 +18,14 @@ const FrameworkOfTheDay = styled.div`
   grid-template-rows: auto;
   grid-template-areas: 'h h h h o o o o i i i i';
   background: ${props => props.theme.white};
-  background: papayawhip;
+  /* background: papayawhip; */
 
   ${media.giant`
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
     grid-template-areas: 
       'h h h h o o o o i i i i';
-    background: goldenrod;
+    /* background: goldenrod; */
   `};
   ${media.desktop`
     grid-template-columns: repeat(3, 1fr);
@@ -33,7 +33,7 @@ const FrameworkOfTheDay = styled.div`
     grid-template-areas: 
       'h h h h o o o o'
       'i i i i . . . .';
-    background: dodgerblue;
+    /* background: dodgerblue; */
   `};
   ${media.tablet`
     grid-template-columns: repeat(3, 1fr);
@@ -42,7 +42,7 @@ const FrameworkOfTheDay = styled.div`
       'h h h h'
       'o o o o'
       'i i i i';
-    background: mediumseagreen;
+    /* background: mediumseagreen; */
   `};
   ${media.phone`
     grid-template-columns: repeat(3, 1fr);
@@ -51,7 +51,7 @@ const FrameworkOfTheDay = styled.div`
       'h h h h'
       'o o o o'
       'i i i i';
-      background: palevioletred;
+      /* background: palevioletred; */
   `};
 `
 
