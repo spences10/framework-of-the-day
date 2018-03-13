@@ -1,35 +1,16 @@
 {
-  "name": "framework-of-the-day",
-  "now": {
-    "name": "fotd"
+  "name": "framework-of-the-day-cra",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1"
   },
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "deploy": "now -e NODE_ENV=production --token $NOW_TOKEN --npm",
-    "alias:dev": "now alias framework-of-the-day.now.sh --token $NOW_TOKEN",
-    "alias:prod": "now alias fotd.scottspence.me --token $NOW_TOKEN"
-  },
-  "dependencies": {
-    "babel-plugin-styled-components": "1.5.0",
-    "next": "5.0.1-canary.5",
-    "react": "16.2.0",
-    "react-dom": "16.2.0",
-    "styled-components": "3.1.6"
-  },
-  "description": "",
-  "version": "1.0.0",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/spences10/react-for-beginners.git"
-  },
-  "keywords": [],
-  "author": "Scott Spence <spences10apps@gmail.com> (https://blog.scottspence.me/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/spences10/react-for-beginners/issues"
-  },
-  "homepage": "https://github.com/spences10/react-for-beginners#readme"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }
