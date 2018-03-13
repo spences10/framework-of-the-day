@@ -24,6 +24,7 @@ const StoreName = styled.input.attrs({
 })`
   width: 100%;
   text-align: center;
+  font-size: 1rem;
 `
 
 const VisitStore = StyledButton.extend.attrs({
