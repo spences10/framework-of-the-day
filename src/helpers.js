@@ -117,7 +117,7 @@ export function getFunName() {
     'data'
   ]
 
-  return `${rando(verbs)} ${rando(adjectives)} ${rando(
+  return `${rando(verbs)}-${rando(adjectives)}-${rando(
     adjectives
-  )} ${rando(nouns)}`
+  )}-${rando(nouns)}`
 }
