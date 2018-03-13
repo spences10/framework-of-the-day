@@ -12,7 +12,7 @@
     "alias:prod": "now alias fotd.scottspence.me --token $NOW_TOKEN"
   },
   "dependencies": {
-    "babel-plugin-styled-components": "1.5.0",
+    "babel-plugin-styled-components": "1.5.1",
     "next": "5.0.1-canary.5",
     "react": "16.2.0",
     "react-dom": "16.2.0",
