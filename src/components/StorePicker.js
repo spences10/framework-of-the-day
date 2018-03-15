@@ -35,7 +35,7 @@ const VisitStore = StyledButton.extend.attrs({
 `
 
 class StorePicker extends React.Component {
-  // myInput = React.createRef()
+  myInput = React.createRef()
   // static propTypes = {
   //   history: PropTypes.object
   // }
@@ -51,9 +51,9 @@ class StorePicker extends React.Component {
 
   render() {
     return (
-      <StoreForm>
+      <StoreForm onSubmit={this.goToStore}>
         <FormTitle>Please Enter a Store</FormTitle>
-        <StoreName />
+        <StoreName ref={this.myInput} />
         <VisitStore>Visit Store 👉</VisitStore>
       </StoreForm>
     )
