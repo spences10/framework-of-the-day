@@ -46,13 +46,18 @@ class StorePicker extends React.Component {
 
     // 2. get the text from that input
     console.log('====================')
-    console.log(this.myInput)
+    console.log(this.myInput.value)
     console.log('====================')
     // const storeName = this.myInput.value.value
     // 3. Change the page to /store/whatever-they-entered
     // this.props.history.push(`/store/${storeName}`)
   }
 
+  componentDidMount() {
+    console.log('====================')
+    console.log(this)
+    console.log('====================')
+  }
   render() {
     return (
       <StoreForm onSubmit={this.goToStore}>
