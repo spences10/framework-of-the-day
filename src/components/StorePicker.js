@@ -35,34 +35,24 @@ const VisitStore = StyledButton.extend.attrs({
 `
 
 class StorePicker extends React.Component {
-  myInput = React.createRef()
-  // static propTypes = {
-  //   history: PropTypes.object
-  // }
-
   goToStore = event => {
     // 1. Stop the form from submitting
     event.preventDefault()
 
     // 2. get the text from that input
     console.log('====================')
-    console.log(this.myInput.value)
+    console.log(this.name.value)
     console.log('====================')
-    // const storeName = this.myInput.value.value
+    const storeName = this.name.value
     // 3. Change the page to /store/whatever-they-entered
-    // this.props.history.push(`/store/${storeName}`)
+    this.props.history.push(`/store/${storeName}`)
   }
 
-  componentDidMount() {
-    console.log('====================')
-    console.log(this)
-    console.log('====================')
-  }
   render() {
     return (
       <StoreForm onSubmit={this.goToStore}>
         <FormTitle>Please Enter a Store</FormTitle>
-        <StoreName ref={this.myInput} />
+        <StoreName innerRef={input => (this.name = input)} />
         <VisitStore>Visit Store 👉</VisitStore>
       </StoreForm>
     )
