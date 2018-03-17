@@ -86,22 +86,9 @@ const ListOfFrameworks = styled.ul`
 `
 
 class App extends React.Component {
-  constructor() {
-    super()
-
-    // bind the addFramework function to the component
-    this.addFramework = this.addFramework.bind(this)
-    this.updateFramework = this.updateFramework.bind(this)
-    this.removeFramework = this.removeFramework.bind(this)
-    this.loadSamples = this.loadSamples.bind(this)
-    this.addToOrder = this.addToOrder.bind(this)
-    this.removeFromOrder = this.removeFromOrder.bind(this)
-
-    // initial state
-    this.state = {
-      frameworks: {},
-      order: {}
-    }
+  state = {
+    frameworks: {},
+    order: {}
   }
 
   componentWillMount() {}
@@ -129,7 +116,7 @@ class App extends React.Component {
   }
 
   // used set and update state
-  addFramework(framework) {
+  addFramework = framework => {
     // spread current state into a var
     const frameworks = { ...this.state.frameworks }
     const timestamp = Date.now()
@@ -138,25 +125,25 @@ class App extends React.Component {
     this.setState({ frameworks })
   }
 
-  updateFramework(key, updatedFramework) {
+  updateFramework = (key, updatedFramework) => {
     const frameworks = { ...this.state.frameworks }
     frameworks[key] = updatedFramework
     this.setState({ frameworks })
   }
 
-  removeFramework(key) {
+  removeFramework = key => {
     const frameworks = { ...this.state.frameworks }
     delete frameworks[key]
     this.setState({ frameworks })
   }
 
-  loadSamples() {
+  loadSamples = () => {
     this.setState({
       frameworks: sampleFrameworks
     })
   }
 
-  addToOrder(key) {
+  addToOrder = key => {
     // copy state into var
     const order = { ...this.state.order }
     // update the order or add new
@@ -165,7 +152,7 @@ class App extends React.Component {
     this.setState({ order })
   }
 
-  removeFromOrder(key) {
+  removeFromOrder = key => {
     const order = { ...this.state.order }
     delete order[key]
     this.setState({ order })
