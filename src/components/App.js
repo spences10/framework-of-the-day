@@ -8,6 +8,8 @@ import Order from './Order'
 import Inventory from './Inventory'
 import Framework from './Framework'
 
+import base from '../base'
+
 import { StyledButton } from '../theme/components'
 import sampleFrameworks from '../sample-frameworks'
 
@@ -94,6 +96,11 @@ class App extends React.Component {
   componentWillMount() {}
 
   componentDidMount() {
+    const { params } = this.props.match
+    this.ref = base.syncState(`${params.storeId}/fishes`, {
+      context: this,
+      state: 'frameworks'
+    })
     const localStorageRef = localStorage.getItem(
       'framework-of-the-day'
     )
@@ -106,7 +113,9 @@ class App extends React.Component {
     }
   }
 
-  componentWillUnmount() {}
+  componentWillUnmount() {
+    base.removeBinding(this.ref)
+  }
 
   componentWillUpdate(nextProps, nextState) {
     localStorage.setItem(
