@@ -12,6 +12,7 @@ const StoreForm = styled.form`
   margin: 50px auto;
   padding: 2rem;
   border: 1px solid ${props => props.theme.black};
+  border-radius: 4px;
 `
 
 const FormTitle = styled.h2``
@@ -24,7 +25,12 @@ const StoreName = styled.input.attrs({
 })`
   width: 100%;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  background: ${props => props.theme.white};
+  border: 1px solid ${props => props.theme.black};
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  padding: 1rem;
 `
 
 const VisitStore = StyledButton.extend.attrs({
@@ -40,10 +46,8 @@ class StorePicker extends React.Component {
     event.preventDefault()
 
     // 2. get the text from that input
-    console.log('====================')
-    console.log(this.name.value)
-    console.log('====================')
     const storeName = this.name.value
+
     // 3. Change the page to /store/whatever-they-entered
     this.props.history.push(`/store/${storeName}`)
   }
