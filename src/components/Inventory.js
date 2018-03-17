@@ -60,13 +60,7 @@ const FrameworkList = styled.div`
 `
 
 class Inventory extends React.Component {
-  constructor() {
-    super()
-    this.renderInventory = this.renderInventory.bind(this)
-    this.handleChange = this.handleChange.bind(this)
-  }
-
-  handleChange(e, key) {
+  handleChange = (e, key) => {
     const framework = this.props.frameworks[key]
 
     const updatedFramework = {
@@ -77,7 +71,7 @@ class Inventory extends React.Component {
     this.props.updateFramework(key, updatedFramework)
   }
 
-  renderInventory(key) {
+  renderInventory = key => {
     const framework = this.props.frameworks[key]
     return (
       <FrameworkList key={key}>
