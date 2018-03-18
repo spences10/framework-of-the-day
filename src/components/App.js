@@ -105,7 +105,7 @@ class App extends React.Component {
       })
     }
 
-    this.ref = base.syncState(`${params.storeId}/fishes`, {
+    this.ref = base.syncState(`${params.storeId}/frameworks`, {
       context: this,
       state: 'frameworks'
     })
