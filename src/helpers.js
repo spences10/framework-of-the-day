@@ -1,4 +1,5 @@
 export function formatPrice(hours) {
+  if (!hours) return
   let divBy, daysYears
   hours > 2920 ? (divBy = 2920) : (divBy = 8)
   hours > 2920 ? (daysYears = 'years') : (daysYears = 'days')
