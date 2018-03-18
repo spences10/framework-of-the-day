@@ -4,7 +4,7 @@ export const FrameworkInput = styled.input.attrs({
   type: props => props.type || 'text',
   placeholder: props => props.placeholder
 })`
-  margin: 0rem 0.5rem;
+  margin: 0.1rem 0.1rem;
   padding: 0rem 0.5rem;
 
   grid-area: ${props => props.area};
@@ -14,14 +14,14 @@ export const FrameworkInput = styled.input.attrs({
   font-family: Roboto;
   font-size: 1rem;
 
-  border: 1px solid ${props => props.theme.white};
+  border: 1px solid ${props => props.theme.black};
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
   background: ${props => props.theme.white};
   border-radius: 2px;
 `
 
 export const FrameworkSelect = styled.select`
-  margin: 0rem 0.5rem;
+  margin: 0.1rem 0.1rem;
   padding: 0rem 0.5rem;
 
   grid-area: s;
@@ -31,7 +31,7 @@ export const FrameworkSelect = styled.select`
   font-family: Roboto;
   font-size: 1rem;
 
-  border: 1px solid ${props => props.theme.white};
+  border: 1px solid ${props => props.theme.black};
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
   background: ${props => props.theme.white};
   border-radius: 2px;
@@ -45,7 +45,7 @@ export const FrameworkSelectOpt = styled.option`
 export const FrameworkDescription = styled.textarea.attrs({
   placeholder: props => props.placeholder || 'Framework Desc'
 })`
-  margin: 0rem 0.5rem;
+  margin: 0.1rem 0.1rem;
   padding: 0rem 0.5rem;
 
   grid-area: d;
@@ -56,7 +56,7 @@ export const FrameworkDescription = styled.textarea.attrs({
   font-family: Roboto;
   font-size: 1rem;
 
-  border: 1px solid ${props => props.theme.white};
+  border: 1px solid ${props => props.theme.black};
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
   background: ${props => props.theme.white};
   border-radius: 2px;
@@ -65,7 +65,7 @@ export const FrameworkDescription = styled.textarea.attrs({
 export const StyledButton = styled.button`
   font-family: inherit;
   font-size: 100%;
-  margin: 0;
+  margin: 0.1rem 0.1rem;
   cursor: pointer;
   background: ${props => props.theme.white};
   border: 1px solid ${props => props.theme.black};
