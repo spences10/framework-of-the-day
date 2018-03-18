@@ -46,10 +46,11 @@ const AddToOrder = StyledButton.extend`
   grid-area: add;
   &:disabled {
     color: ${props => props.theme.redViolet};
-    background: #fff;
+    background: ${props => props.theme.black};
     border-color: ${props => props.theme.redViolet};
-    transform: rotate(-10deg) scale(1.5) translateY(-100%)
-      translateX(-25%);
+    transform: rotate(-10deg) scale(1) translateY(-130%)
+      translateX(-20%);
+    cursor: not-allowed;
   }
 `
 
