@@ -45,6 +45,7 @@ const AddToOrder = StyledButton.extend`
   padding: 0.1rem 0.5rem;
   grid-area: add;
   &:disabled {
+    font-size: 2rem;
     color: ${props => props.theme.redViolet};
     background: ${props => props.theme.black};
     border-color: ${props => props.theme.redViolet};
