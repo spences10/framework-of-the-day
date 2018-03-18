@@ -14,7 +14,7 @@ export const FrameworkInput = styled.input.attrs({
   font-family: Roboto;
   font-size: 1rem;
 
-  border: 1px dashed ${props => props.theme.white};
+  border: 1px solid ${props => props.theme.white};
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
   background: ${props => props.theme.white};
   border-radius: 2px;
@@ -31,7 +31,7 @@ export const FrameworkSelect = styled.select`
   font-family: Roboto;
   font-size: 1rem;
 
-  border: 1px dashed ${props => props.theme.white};
+  border: 1px solid ${props => props.theme.white};
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
   background: ${props => props.theme.white};
   border-radius: 2px;
@@ -56,7 +56,7 @@ export const FrameworkDescription = styled.textarea.attrs({
   font-family: Roboto;
   font-size: 1rem;
 
-  border: 1px dashed ${props => props.theme.white};
+  border: 1px solid ${props => props.theme.white};
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
   background: ${props => props.theme.white};
   border-radius: 2px;
