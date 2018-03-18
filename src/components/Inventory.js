@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import AddFrameworkForm from './AddFrameworkForm'
@@ -60,13 +61,13 @@ const FrameworkList = styled.div`
 `
 
 class Inventory extends React.Component {
-  constructor() {
-    super()
-    this.renderInventory = this.renderInventory.bind(this)
-    this.handleChange = this.handleChange.bind(this)
+  static propTypes = {
+    frameworks: PropTypes.object,
+    updateFramework: PropTypes.func,
+    removeFramework: PropTypes.func,
+    loadSamples: PropTypes.func
   }
-
-  handleChange(e, key) {
+  handleChange = (e, key) => {
     const framework = this.props.frameworks[key]
 
     const updatedFramework = {
@@ -77,7 +78,7 @@ class Inventory extends React.Component {
     this.props.updateFramework(key, updatedFramework)
   }
 
-  renderInventory(key) {
+  renderInventory = key => {
     const framework = this.props.frameworks[key]
     return (
       <FrameworkList key={key}>

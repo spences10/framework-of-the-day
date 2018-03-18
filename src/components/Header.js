@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const HeaderTop = styled.div`
@@ -48,6 +49,10 @@ const Header = props => {
       <Tagline>{props.tagline}</Tagline>
     </HeaderTop>
   )
+}
+
+Header.propTypes = {
+  tagline: PropTypes.string.isRequired
 }
 
 export default Header
