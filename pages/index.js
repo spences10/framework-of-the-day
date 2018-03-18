@@ -14,8 +14,23 @@ import { theme } from '../theme/globalStyle'
 //   )
 // }
 
+// export default () => (
+//   <ThemeProvider theme={theme}>
+//     <StorePicker />
+//   </ThemeProvider>
+// )
+
+import { Link } from '../routes'
+
 export default () => (
-  <ThemeProvider theme={theme}>
-    <App />
-  </ThemeProvider>
+  <div>
+    <div>Welcome to Next.js!</div>
+    <Link route="blog" params={{ slug: 'hello-world' }}>
+      <a>Hello world</a>
+    </Link>
+    or
+    <Link route="/blog/hello-world">
+      <a>Hello world</a>
+    </Link>
+  </div>
 )
