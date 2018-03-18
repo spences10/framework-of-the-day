@@ -146,8 +146,11 @@ class App extends React.Component {
   }
 
   removeFramework = key => {
+    // copy state
     const frameworks = { ...this.state.frameworks }
+    // delete w/ null
     frameworks[key] = null
+    // update state
     this.setState({ frameworks })
   }
 
@@ -168,7 +171,7 @@ class App extends React.Component {
 
   removeFromOrder = key => {
     const order = { ...this.state.order }
-    order[key] = null
+    delete order[key]
     this.setState({ order })
   }
 
