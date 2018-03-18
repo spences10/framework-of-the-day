@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { StyledButton } from '../theme/components'
@@ -54,6 +55,11 @@ const RemoveButton = styled.button`
 `
 
 class Order extends React.Component {
+  static propTypes = {
+    frameworks: PropTypes.object,
+    order: PropTypes.object,
+    removeFromOrder: PropTypes.func
+  }
   renderOrder = key => {
     const framework = this.props.frameworks[key]
     const count = this.props.order[key]

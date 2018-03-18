@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "firebase": "4.11.0",
+    "prop-types": "15.6.1",
     "re-base": "3.2.2",
     "react": "16.2.0",
     "react-dom": "16.2.0",
@@ -18,7 +19,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "now -e NODE_ENV=production --token $NOW_TOKEN --npm",
-    "alias:dev": "now alias framework-of-the-day.now.sh --token $NOW_TOKEN",
+    "alias:dev":
+      "now alias framework-of-the-day.now.sh --token $NOW_TOKEN",
     "alias:prod": "now alias fotd.scottspence.me --token $NOW_TOKEN"
   },
   "repository": {
@@ -26,10 +28,12 @@
     "url": "git+https://github.com/spences10/framework-of-the-day.git"
   },
   "keywords": [],
-  "author": "Scott Spence <spences10apps@gmail.com> (https://scottspence.me/)",
+  "author":
+    "Scott Spence <spences10apps@gmail.com> (https://scottspence.me/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/spences10/framework-of-the-day/issues"
   },
-  "homepage": "https://github.com/spences10/framework-of-the-day#readme"
+  "homepage":
+    "https://github.com/spences10/framework-of-the-day#readme"
 }

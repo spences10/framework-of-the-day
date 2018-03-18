@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { media } from '../theme/globalStyle'
@@ -91,6 +92,10 @@ class App extends React.Component {
   state = {
     frameworks: {},
     order: {}
+  }
+
+  static propTypes = {
+    match: PropTypes.object
   }
 
   componentWillMount() {}

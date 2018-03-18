@@ -41,6 +41,9 @@ const VisitStore = StyledButton.extend.attrs({
 `
 
 class StorePicker extends React.Component {
+  static propTypes = {
+    history: PropTypes.object
+  }
   goToStore = event => {
     // 1. Stop the form from submitting
     event.preventDefault()

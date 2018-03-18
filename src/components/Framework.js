@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { StyledButton } from '../theme/components'
@@ -56,6 +57,16 @@ const AddToOrder = StyledButton.extend`
 `
 
 class Framework extends React.Component {
+  static propTypes = {
+    details: PropTypes.shape({
+      status: PropTypes.string,
+      image: PropTypes.string,
+      name: PropTypes.string,
+      desc: PropTypes.string,
+      price: PropTypes.number
+    }),
+    addToOrder: PropTypes.func
+  }
   render() {
     const { details, index } = this.props
     const isAvailable = details.status === 'available'

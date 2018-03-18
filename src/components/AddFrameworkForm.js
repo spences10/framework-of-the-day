@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import {
@@ -38,6 +39,9 @@ const AddItem = StyledButton.extend.attrs({
 `
 
 class AddFrameworkForm extends React.Component {
+  static propTypes = {
+    addFramework: PropTypes.func
+  }
   createFramework(event) {
     event.preventDefault()
     const framework = {

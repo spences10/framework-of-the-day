@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import AddFrameworkForm from './AddFrameworkForm'
@@ -60,6 +61,12 @@ const FrameworkList = styled.div`
 `
 
 class Inventory extends React.Component {
+  static propTypes = {
+    frameworks: PropTypes.object,
+    updateFramework: PropTypes.func,
+    removeFramework: PropTypes.func,
+    loadSamples: PropTypes.func
+  }
   handleChange = (e, key) => {
     const framework = this.props.frameworks[key]
 
