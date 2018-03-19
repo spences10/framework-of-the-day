@@ -138,7 +138,11 @@ class Inventory extends React.Component {
   }
 
   render() {
-    return <Login />
+    return (
+      <InventoryWrapper>
+        <Login />
+      </InventoryWrapper>
+    )
     return (
       <InventoryWrapper>
         <InventoryTitle>Inventory</InventoryTitle>
