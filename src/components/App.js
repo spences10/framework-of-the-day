@@ -207,6 +207,7 @@ class App extends React.Component {
           frameworks={this.state.frameworks}
           updateFramework={this.updateFramework}
           removeFramework={this.removeFramework}
+          storeId={this.props.match.params.storeId}
         />
       </FrameworkOfTheDay>
     )

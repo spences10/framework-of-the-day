@@ -10,28 +10,45 @@ const LoginTitle = styled.h2``
 
 const LoginP = styled.h2``
 
-const GitHubButton = SB.extend``
+const AuthButton = SB.extend`
+  border: 0;
+  display: block;
+  margin-bottom: 2rem;
+  width: 100%;
+  color: #fff;
+  padding: 2rem;
+`
 
-const TwitterButton = SB.extend``
+const GitHubButton = AuthButton.extend`
+  background: #5cc437;
+`
 
-const FacebookButton = SB.extend``
+const TwitterButton = AuthButton.extend`
+  background: #2c8dd0;
+`
 
-const Login = () => (
+const FacebookButton = AuthButton.extend`
+  background: #2d5082;
+`
+
+const Login = props => (
   <LoginNav>
     <LoginTitle>Inventory Login</LoginTitle>
     <LoginP>Sign in to manage store inventory.</LoginP>
-    <GitHubButton onClick={() => this.props.authenticate('Github')}>
+    <GitHubButton onClick={() => props.authenticate('Github')}>
       Log in with GitHub
     </GitHubButton>
-    <TwitterButton onClick={() => this.props.authenticate('Twitter')}>
+    <TwitterButton onClick={() => props.authenticate('Twitter')}>
       Log in with Twitter
     </TwitterButton>
-    <FacebookButton
-      onClick={() => this.props.authenticate('Facebook')}
-    >
+    <FacebookButton onClick={() => props.authenticate('Facebook')}>
       Log in with Facebook
     </FacebookButton>
   </LoginNav>
 )
+
+Login.propTypes = {
+  authenticate: PropTypes.func.isRequired
+}
 
 export default Login
