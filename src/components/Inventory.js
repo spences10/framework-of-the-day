@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import AddFrameworkForm from './AddFrameworkForm'
+import Login from './Login'
 
 import {
   FrameworkInput,
@@ -137,6 +138,7 @@ class Inventory extends React.Component {
   }
 
   render() {
+    return <Login />
     return (
       <InventoryWrapper>
         <InventoryTitle>Inventory</InventoryTitle>
