@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { media } from '../theme/globalStyle'
@@ -7,6 +8,8 @@ import Header from './Header'
 import Order from './Order'
 import Inventory from './Inventory'
 import Framework from './Framework'
+
+import base from '../base'
 
 import { StyledButton } from '../theme/components'
 import sampleFrameworks from '../sample-frameworks'
@@ -86,40 +89,43 @@ const ListOfFrameworks = styled.ul`
 `
 
 class App extends React.Component {
-  constructor() {
-    super()
+  state = {
+    frameworks: {},
+    order: {}
+  }
 
-    // bind the addFramework function to the component
-    this.addFramework = this.addFramework.bind(this)
-    this.updateFramework = this.updateFramework.bind(this)
-    this.removeFramework = this.removeFramework.bind(this)
-    this.loadSamples = this.loadSamples.bind(this)
-    this.addToOrder = this.addToOrder.bind(this)
-    this.removeFromOrder = this.removeFromOrder.bind(this)
-
-    // initial state
-    this.state = {
-      frameworks: {},
-      order: {}
-    }
+  static propTypes = {
+    match: PropTypes.object
   }
 
   componentWillMount() {}
 
   componentDidMount() {
-    const localStorageRef = localStorage.getItem(
-      'framework-of-the-day'
-    )
+    const { params } = this.props.match
 
+    const localStorageRef = localStorage.getItem(params.storeId)
     if (localStorageRef) {
       this.setState({
         order: JSON.parse(localStorageRef)
       })
-      this.loadSamples()
     }
+
+    this.ref = base.syncState(`${params.storeId}/frameworks`, {
+      context: this,
+      state: 'frameworks'
+    })
   }
 
-  componentWillUnmount() {}
+  componentDidUpdate() {
+    localStorage.setItem(
+      this.props.match.params.storeId,
+      JSON.stringify(this.state.order)
+    )
+  }
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref)
+  }
 
   componentWillUpdate(nextProps, nextState) {
     localStorage.setItem(
@@ -129,7 +135,7 @@ class App extends React.Component {
   }
 
   // used set and update state
-  addFramework(framework) {
+  addFramework = framework => {
     // spread current state into a var
     const frameworks = { ...this.state.frameworks }
     const timestamp = Date.now()
@@ -138,25 +144,28 @@ class App extends React.Component {
     this.setState({ frameworks })
   }
 
-  updateFramework(key, updatedFramework) {
+  updateFramework = (key, updatedFramework) => {
     const frameworks = { ...this.state.frameworks }
     frameworks[key] = updatedFramework
     this.setState({ frameworks })
   }
 
-  removeFramework(key) {
+  removeFramework = key => {
+    // copy state
     const frameworks = { ...this.state.frameworks }
-    delete frameworks[key]
+    // delete w/ null
+    frameworks[key] = null
+    // update state
     this.setState({ frameworks })
   }
 
-  loadSamples() {
+  loadSamples = () => {
     this.setState({
       frameworks: sampleFrameworks
     })
   }
 
-  addToOrder(key) {
+  addToOrder = key => {
     // copy state into var
     const order = { ...this.state.order }
     // update the order or add new
@@ -165,7 +174,7 @@ class App extends React.Component {
     this.setState({ order })
   }
 
-  removeFromOrder(key) {
+  removeFromOrder = key => {
     const order = { ...this.state.order }
     delete order[key]
     this.setState({ order })
@@ -198,6 +207,7 @@ class App extends React.Component {
           frameworks={this.state.frameworks}
           updateFramework={this.updateFramework}
           removeFramework={this.removeFramework}
+          storeId={this.props.match.params.storeId}
         />
       </FrameworkOfTheDay>
     )

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { StyledButton } from '../theme/components'
@@ -45,15 +46,27 @@ const AddToOrder = StyledButton.extend`
   padding: 0.1rem 0.5rem;
   grid-area: add;
   &:disabled {
+    font-size: 2rem;
     color: ${props => props.theme.redViolet};
-    background: #fff;
+    background: ${props => props.theme.black};
     border-color: ${props => props.theme.redViolet};
-    transform: rotate(-10deg) scale(1.5) translateY(-100%)
-      translateX(-25%);
+    transform: rotate(-10deg) scale(1) translateY(-130%)
+      translateX(-20%);
+    cursor: not-allowed;
   }
 `
 
 class Framework extends React.Component {
+  static propTypes = {
+    details: PropTypes.shape({
+      status: PropTypes.string,
+      image: PropTypes.string,
+      name: PropTypes.string,
+      desc: PropTypes.string,
+      price: PropTypes.number
+    }),
+    addToOrder: PropTypes.func
+  }
   render() {
     const { details, index } = this.props
     const isAvailable = details.status === 'available'

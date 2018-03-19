@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { StyledButton } from '../theme/components'
@@ -54,16 +55,19 @@ const RemoveButton = styled.button`
 `
 
 class Order extends React.Component {
-  constructor() {
-    super()
-    this.renderOrder = this.renderOrder.bind(this)
+  static propTypes = {
+    frameworks: PropTypes.object,
+    order: PropTypes.object,
+    removeFromOrder: PropTypes.func
   }
-
-  renderOrder(key) {
+  renderOrder = key => {
     const framework = this.props.frameworks[key]
     const count = this.props.order[key]
 
-    if (!framework || framework.status === 'unavailable') {
+    const isAvailable = framework && framework.status === 'available'
+    if (!isAvailable) return null
+
+    if (!isAvailable) {
       return (
         <OrderList key={key}>
           Sorry, {framework ? framework.name : 'framework'} is now

@@ -1,7 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import firebase from 'firebase'
 
 import AddFrameworkForm from './AddFrameworkForm'
+import Login from './Login'
+import base, { firebaseApp } from '../base'
 
 import {
   FrameworkInput,
@@ -60,13 +64,62 @@ const FrameworkList = styled.div`
 `
 
 class Inventory extends React.Component {
-  constructor() {
-    super()
-    this.renderInventory = this.renderInventory.bind(this)
-    this.handleChange = this.handleChange.bind(this)
+  static propTypes = {
+    frameworks: PropTypes.object,
+    updateFramework: PropTypes.func,
+    removeFramework: PropTypes.func,
+    loadSamples: PropTypes.func
   }
 
-  handleChange(e, key) {
+  state = {
+    uid: null,
+    owner: null
+  }
+
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.authHandler({ user })
+      }
+    })
+  }
+
+  authHandler = async authData => {
+    // look up current user
+    const store = await base.fetch(this.props.storeId, {
+      context: this
+    })
+    // clain it if no owner
+    if (!store.owner) {
+      // save it as our own
+      await base.post(`${this.props.storeId}/owner`, {
+        data: authData.user.uid
+      })
+    }
+    // set inventory to current user
+    this.setState({
+      uid: authData.user.uid,
+      owner: store.owner || authData.user.uid
+    })
+  }
+
+  authenticate = provider => {
+    const authProvider = new firebase.auth[
+      `${provider}AuthProvider`
+    ]()
+    firebase
+      .auth()
+      .signInWithPopup(authProvider)
+      .then(this.authHandler)
+  }
+
+  logout = async () => {
+    console.log('Logging out!')
+    await firebase.auth().signOut()
+    this.setState({ uid: null })
+  }
+
+  handleChange = (e, key) => {
     const framework = this.props.frameworks[key]
 
     const updatedFramework = {
@@ -77,7 +130,7 @@ class Inventory extends React.Component {
     this.props.updateFramework(key, updatedFramework)
   }
 
-  renderInventory(key) {
+  renderInventory = key => {
     const framework = this.props.frameworks[key]
     return (
       <FrameworkList key={key}>
@@ -136,9 +189,32 @@ class Inventory extends React.Component {
   }
 
   render() {
+    const logout = (
+      <StyledButton onClick={this.logout}>Log Out!</StyledButton>
+    )
+
+    if (!this.state.uid) {
+      return (
+        <InventoryWrapper>
+          <Login authenticate={this.authenticate} />
+        </InventoryWrapper>
+      )
+    }
+
+    if (this.state.uid !== this.state.owner) {
+      return (
+        <InventoryWrapper>
+          <InventoryTitle>
+            Sorry! You are not the owner of this store.
+          </InventoryTitle>
+          {logout}
+        </InventoryWrapper>
+      )
+    }
     return (
       <InventoryWrapper>
         <InventoryTitle>Inventory</InventoryTitle>
+        {logout}
         {Object.keys(this.props.frameworks).map(this.renderInventory)}
         <AddFrameworkForm addFramework={this.props.addFramework} />
         <AddFrameworks onClick={this.props.loadSamples}>
