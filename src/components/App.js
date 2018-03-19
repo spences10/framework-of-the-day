@@ -11,7 +11,6 @@ import Framework from './Framework'
 
 import base from '../base'
 
-import { StyledButton } from '../theme/components'
 import sampleFrameworks from '../sample-frameworks'
 
 const FrameworkOfTheDay = styled.div`
@@ -60,24 +59,6 @@ const FrameworkOfTheDay = styled.div`
 
 const Menu = styled.div`
   grid-area: h;
-`
-
-const FormTitle = styled.h2``
-
-const StoreName = styled.input.attrs({
-  type: 'text',
-  required: true,
-  placeholder: 'Store Name'
-})`
-  width: 100%;
-  text-align: center;
-`
-
-const VisitStore = StyledButton.extend.attrs({
-  type: 'submit'
-})`
-  width: 100%;
-  text-align: center;
 `
 
 const ListOfFrameworks = styled.ul`

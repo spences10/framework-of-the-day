@@ -10,8 +10,6 @@ import {
   StyledButton
 } from '../theme/components'
 
-const InventoryTitle = styled.h2``
-
 const FrameworkEdit = styled.form`
   margin: 1rem 0rem;
   padding: 1rem;

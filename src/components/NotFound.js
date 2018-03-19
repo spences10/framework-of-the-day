@@ -2,7 +2,12 @@ import React from 'react'
 
 const NotFound = () => (
   <div>
-    <h2>Not Found! 🙃</h2>
+    <h2>
+      Not Found!{' '}
+      <span role="img" aria-labelledby="upside down face">
+        🙃
+      </span>
+    </h2>
   </div>
 )
 
