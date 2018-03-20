@@ -63,8 +63,7 @@ class Order extends React.Component {
         <OrderList key={key}>
           Sorry, {framework ? framework.name : 'framework'} is now
           depreciated!<RemoveButton
-            onClick={() => this.props.removeFromOrder(key)}
-          >
+            onClick={() => this.props.removeFromOrder(key)}>
             &times;
           </RemoveButton>
         </OrderList>
@@ -76,8 +75,7 @@ class Order extends React.Component {
         <span>
           {count} courses of <strong>{framework.name}</strong>
           <RemoveButton
-            onClick={() => this.props.removeFromOrder(key)}
-          >
+            onClick={() => this.props.removeFromOrder(key)}>
             &times;
           </RemoveButton>
         </span>
@@ -94,7 +92,7 @@ class Order extends React.Component {
         framework && framework.status === 'available'
       if (isAvailable) {
         return prevTotal + (count * framework.price || 0)
-      }
+      } else return 0
     }, 0)
     return (
       <OrderWrapper>
