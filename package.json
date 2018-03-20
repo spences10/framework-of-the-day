@@ -2,6 +2,7 @@
   "name": "framework-of-the-day",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://framework-of-the-day.scottspence.me",
   "dependencies": {
     "firebase": "4.11.0",
     "prop-types": "15.6.1",
@@ -19,34 +20,30 @@
     "pretty-quick": "1.4.1"
   },
   "now": {
-    "name": "fotd",
+    "name": "framework-of-the-day",
     "alias:dev": "framework-of-the-day.now.sh",
-    "alias:prod": "fotd.scottspence.me"
+    "alias:prod": "framework-of-the-day.scottspence.me"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && mv build fotd",
+    "build": "rmtrash framework-of-the-day/ && react-scripts build && mv build framework-of-the-day",
     "test": "react-scripts test --env=jsdom",
     "format": "pretty-quick",
     "precommit": "pretty-quick --staged",
     "eject": "react-scripts eject",
-    "deploy": "now fotd/ --token $NOW_TOKEN",
-    "alias:dev":
-      "now alias:dev --token $NOW_TOKEN",
+    "deploy": "now framework-of-the-day/ --token $NOW_TOKEN",
+    "alias:dev": "now alias:dev --token $NOW_TOKEN",
     "alias:prod": "now alias:prod --token $NOW_TOKEN",
-    "cleanup": "now rm fotd --safe --yes --token $NOW_TOKEN"
+    "cleanup": "now rm framework-of-the-day --safe --yes --token $NOW_TOKEN"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/spences10/framework-of-the-day.git"
   },
   "keywords": [],
-  "author":
-    "Scott Spence <spences10apps@gmail.com> (https://scottspence.me/)",
+  "author": "Scott Spence <spences10apps@gmail.com> (https://scottspence.me/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/spences10/framework-of-the-day/issues"
-  },
-  "homepage":
-    "https://github.com/spences10/framework-of-the-day#readme"
+  }
 }

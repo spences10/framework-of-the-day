@@ -8,7 +8,7 @@
 
 # production
 /build
-/fotd
+/framework-of-the-day
 
 # misc
 .DS_Store
