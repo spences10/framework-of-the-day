@@ -32,9 +32,9 @@
     "precommit": "pretty-quick --staged",
     "eject": "react-scripts eject",
     "deploy": "now fotd/ --token $NOW_TOKEN",
-    "alias:dev": "now fotd --token $NOW_TOKEN",
+    "alias:dev": "now fotd.now.sh --token $NOW_TOKEN",
     "alias:prod": "now fotd.scottspence.me --token $NOW_TOKEN",
-    "cleanup": "now rm framework-of-the-day --safe --yes --token $NOW_TOKEN"
+    "cleanup": "now rm fotd --safe --yes --token $NOW_TOKEN"
   },
   "repository": {
     "type": "git",
