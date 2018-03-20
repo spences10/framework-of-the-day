@@ -26,7 +26,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rmtrash fotd/ && react-scripts build && mv build fotd",
+    "build": "rm -rf fotd/ && react-scripts build && mv build fotd",
     "test": "react-scripts test --env=jsdom",
     "format": "pretty-quick",
     "precommit": "pretty-quick --staged",
