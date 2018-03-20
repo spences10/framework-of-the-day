@@ -60,7 +60,12 @@ class StorePicker extends React.Component {
       <StoreForm onSubmit={this.goToStore}>
         <FormTitle>Please Enter a Store</FormTitle>
         <StoreName innerRef={input => (this.name = input)} />
-        <VisitStore>Visit Store 👉</VisitStore>
+        <VisitStore>
+          Visit Store{' '}
+          <span role="img" aria-label="pointy hand">
+            👉
+          </span>
+        </VisitStore>
       </StoreForm>
     )
   }
