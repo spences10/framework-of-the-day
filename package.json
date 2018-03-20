@@ -2,7 +2,7 @@
   "name": "framework-of-the-day",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://framework-of-the-day.scottspence.me",
+  "homepage": "https://fotd.scottspence.me",
   "dependencies": {
     "firebase": "4.11.0",
     "prop-types": "15.6.1",
@@ -20,20 +20,20 @@
     "pretty-quick": "1.4.1"
   },
   "now": {
-    "name": "framework-of-the-day",
+    "name": "fotd",
     "alias:dev": "framework-of-the-day.now.sh",
     "alias:prod": "framework-of-the-day.scottspence.me"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rmtrash framework-of-the-day/ && react-scripts build && mv build framework-of-the-day",
+    "build": "rmtrash fotd/ && react-scripts build && mv build fotd",
     "test": "react-scripts test --env=jsdom",
     "format": "pretty-quick",
     "precommit": "pretty-quick --staged",
     "eject": "react-scripts eject",
-    "deploy": "now framework-of-the-day/ --token $NOW_TOKEN",
-    "alias:dev": "now alias:dev --token $NOW_TOKEN",
-    "alias:prod": "now alias:prod --token $NOW_TOKEN",
+    "deploy": "now fotd/ --token $NOW_TOKEN",
+    "alias:dev": "now fotd --token $NOW_TOKEN",
+    "alias:prod": "now fotd.scottspence.me --token $NOW_TOKEN",
     "cleanup": "now rm framework-of-the-day --safe --yes --token $NOW_TOKEN"
   },
   "repository": {
