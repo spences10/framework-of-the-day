@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://fotd.scottspence.me",
   "dependencies": {
-    "firebase": "4.12.0",
+    "firebase": "4.12.1",
     "prop-types": "15.6.1",
     "re-base": "3.2.2",
     "react": "16.2.0",
