@@ -141,11 +141,11 @@ class App extends React.Component {
     this.setState({ frameworks })
   }
 
-  loadSamples = () => {
-    this.setState({
-      frameworks: sampleFrameworks
-    })
-  }
+  // loadSamples = () => {
+  //   this.setState({
+  //     frameworks: sampleFrameworks
+  //   })
+  // }
 
   addToOrder = key => {
     // copy state into var
