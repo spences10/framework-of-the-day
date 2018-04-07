@@ -1,8 +1,8 @@
-import { createContext, Component } from 'react'
+import React, { createContext, Component } from 'react'
 
-const FrameworkContext = createContext()
+const FrameworkContext = React.createContext()
 
-class FrameworkProvider extends Component {
+class FrameworkProvider extends React.Component {
   state = {
     name: 'Scott',
     age: 40,
@@ -21,5 +21,3 @@ class FrameworkProvider extends Component {
 }
 
 export default FrameworkProvider
-
-// export const FrameworkConsumer = FrameworkContext.Consumer
