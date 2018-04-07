@@ -8,6 +8,10 @@ import Header from './Header'
 import Order from './Order'
 import Inventory from './Inventory'
 import Framework from './Framework'
+import {
+  FrameworkProvider,
+  FrameworkContext
+} from './FrameworksContext'
 
 import base from '../base'
 
@@ -163,34 +167,43 @@ class App extends React.Component {
 
   render() {
     return (
-      <FrameworkOfTheDay>
-        <Menu>
-          <Header tagline={'Fresh JS Framework Market'} />
-          <ListOfFrameworks>
-            {Object.keys(this.state.frameworks).map(key => (
-              <Framework
-                key={key}
-                index={key}
-                details={this.state.frameworks[key]}
-                addToOrder={this.addToOrder}
-              />
-            ))}
-          </ListOfFrameworks>
-        </Menu>
-        <Order
-          frameworks={this.state.frameworks}
-          order={this.state.order}
-          removeFromOrder={this.removeFromOrder}
-        />
-        <Inventory
-          addFramework={this.addFramework}
-          loadSamples={this.loadSamples}
-          frameworks={this.state.frameworks}
-          updateFramework={this.updateFramework}
-          removeFramework={this.removeFramework}
-          storeId={this.props.match.params.storeId}
-        />
-      </FrameworkOfTheDay>
+      <FrameworkProvider>
+        <FrameworkOfTheDay>
+          <Menu>
+            <Header tagline={'Fresh JS Framework Market'} />
+            <ListOfFrameworks>
+              {Object.keys(this.state.frameworks).map(key => (
+                <Framework
+                  key={key}
+                  index={key}
+                  details={this.state.frameworks[key]}
+                  addToOrder={this.addToOrder}
+                />
+              ))}
+            </ListOfFrameworks>
+          </Menu>
+          <Order
+            frameworks={this.state.frameworks}
+            order={this.state.order}
+            removeFromOrder={this.removeFromOrder}
+          />
+          <FrameworkContext.Consumer>
+            {context => (
+              <React.Fragment>
+                <p>Name:{context.state.name}</p>
+              </React.Fragment>
+            )}
+          </FrameworkContext.Consumer>
+          <Inventory
+            addFramework={this.addFramework}
+            loadSamples={this.loadSamples}
+            frameworks={this.state.frameworks}
+            updateFramework={this.updateFramework}
+            removeFramework={this.removeFramework}
+            storeId={this.props.match.params.storeId}
+          />
+        </FrameworkOfTheDay>
+      </FrameworkProvider>
     )
   }
 }
