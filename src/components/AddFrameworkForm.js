@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import { FrameworkContext } from './FrameworksContext'
+
 import {
   FrameworkInput,
   FrameworkSelect,
@@ -56,8 +58,7 @@ class AddFrameworkForm extends React.Component {
     return (
       <FrameworkEdit
         innerRef={input => (this.frameworkForm = input)}
-        onSubmit={e => this.createFramework(e)}
-      >
+        onSubmit={e => this.createFramework(e)}>
         <FrameworkInput
           innerRef={input => (this.name = input)}
           area={'n'}
