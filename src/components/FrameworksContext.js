@@ -1,5 +1,7 @@
 import React, { createContext, Component } from 'react'
 
+import sampleFrameworks from '../sample-frameworks'
+
 export const FrameworkContext = createContext()
 
 export class FrameworkProvider extends Component {
