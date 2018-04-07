@@ -8,10 +8,7 @@ import Header from './Header'
 import Order from './Order'
 import Inventory from './Inventory'
 import Framework from './Framework'
-import {
-  FrameworkProvider,
-  FrameworkContext
-} from './FrameworksContext'
+import { FrameworkProvider } from './FrameworksContext'
 
 import base from '../base'
 
@@ -187,13 +184,6 @@ class App extends React.Component {
             order={this.state.order}
             removeFromOrder={this.removeFromOrder}
           />
-          <FrameworkContext.Consumer>
-            {context => (
-              <React.Fragment>
-                <p>Name:{context.state.name}</p>
-              </React.Fragment>
-            )}
-          </FrameworkContext.Consumer>
           <Inventory
             addFramework={this.addFramework}
             loadSamples={this.loadSamples}
