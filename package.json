@@ -18,7 +18,7 @@
     "eslint": "4.19.1",
     "eslint-plugin-react": "7.8.2",
     "prettier": "1.12.1",
-    "pretty-quick": "1.5.0"
+    "pretty-quick": "1.5.1"
   },
   "now": {
     "name": "fotd",
