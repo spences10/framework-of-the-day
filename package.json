@@ -6,10 +6,9 @@
   "dependencies": {
     "firebase": "5.0.3",
     "prop-types": "15.6.1",
-    "react": "16.3.0",
     "re-base": "3.2.3",
-    "react": "16.3.2",
-    "react-dom": "16.3.2",
+    "react": "16.4.0",
+    "react-dom": "16.4.0",
     "react-router-dom": "4.3.0-rc.1",
     "react-scripts": "1.1.4",
     "styled-components": "3.2.6"
