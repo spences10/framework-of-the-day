@@ -5,7 +5,7 @@
   "homepage": "https://fotd.scottspence.me",
   "dependencies": {
     "firebase": "5.0.4",
-    "prop-types": "15.6.1",
+    "prop-types": "15.6.2",
     "re-base": "3.2.3",
     "react": "16.4.0",
     "react-dom": "16.4.0",
