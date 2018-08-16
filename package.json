@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "eslint": "5.0.1",
-    "eslint-plugin-react": "7.9.1",
+    "eslint-plugin-react": "7.11.1",
     "prettier": "1.13.5",
     "pretty-quick": "1.6.0"
   },
