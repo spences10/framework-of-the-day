@@ -19,29 +19,21 @@
     "prettier": "1.13.5",
     "pretty-quick": "1.6.0"
   },
-  "now": {
-    "name": "fotd",
-    "alias:dev": "framework-of-the-day.now.sh",
-    "alias:prod": "framework-of-the-day.scottspence.me"
-  },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf fotd/ && react-scripts build && mv build fotd",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "format": "pretty-quick",
     "precommit": "pretty-quick --staged",
-    "eject": "react-scripts eject",
-    "deploy": "now fotd/ --token $NOW_TOKEN",
-    "alias:dev": "now alias fotd.now.sh --token $NOW_TOKEN",
-    "alias:prod": "now alias fotd.scottspence.me --token $NOW_TOKEN",
-    "cleanup": "now rm fotd --safe --yes --token $NOW_TOKEN"
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/spences10/framework-of-the-day.git"
   },
   "keywords": [],
-  "author": "Scott Spence <spences10apps@gmail.com> (https://scottspence.me/)",
+  "author":
+    "Scott Spence <spences10apps@gmail.com> (https://scottspence.me/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/spences10/framework-of-the-day/issues"
