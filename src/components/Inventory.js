@@ -24,7 +24,7 @@ const InventoryWrapper = styled.div`
   border-radius: 4px;
 `
 
-const AddFrameworks = StyledButton.extend.attrs({
+const AddFrameworks = styled(StyledButton).attrs({
   type: 'submit'
 })`
   grid-area: a;
@@ -32,7 +32,7 @@ const AddFrameworks = StyledButton.extend.attrs({
   text-align: center;
 `
 
-const RemoveFramework = StyledButton.extend.attrs({
+const RemoveFramework = styled(StyledButton).attrs({
   type: 'submit'
 })`
   grid-area: r;

@@ -10,7 +10,7 @@ const LoginTitle = styled.h2``
 
 const LoginP = styled.h2``
 
-const AuthButton = SB.extend`
+const AuthButton = styled(SB)`
   border: 0;
   display: block;
   margin-bottom: 2rem;
@@ -19,15 +19,15 @@ const AuthButton = SB.extend`
   padding: 2rem;
 `
 
-const GitHubButton = AuthButton.extend`
+const GitHubButton = styled(AuthButton)`
   background: #5cc437;
 `
 
-const TwitterButton = AuthButton.extend`
+const TwitterButton = styled(AuthButton)`
   background: #2c8dd0;
 `
 
-const FacebookButton = AuthButton.extend`
+const FacebookButton = styled(AuthButton)`
   background: #2d5082;
 `
 

@@ -41,7 +41,7 @@ const FrameworkDesc = styled.p`
   padding: 0rem 0.5rem;
   grid-area: desc;
 `
-const AddToOrder = StyledButton.extend`
+const AddToOrder = styled(StyledButton)`
   margin: 0rem 0.5rem;
   padding: 0.1rem 0.5rem;
   grid-area: add;
