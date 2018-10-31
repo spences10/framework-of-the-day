@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { media } from '../theme/globalStyle'
+import { media, GlobalStyle } from '../theme/globalStyle'
 
 import Header from './Header'
 import Order from './Order'
@@ -164,6 +164,7 @@ class App extends React.Component {
   render() {
     return (
       <FrameworkOfTheDay>
+        <GlobalStyle />
         <Menu>
           <Header tagline={'Fresh JS Framework Market'} />
           <ListOfFrameworks>
