@@ -33,7 +33,7 @@ const StoreName = styled.input.attrs({
   padding: 1rem;
 `
 
-const VisitStore = StyledButton.extend.attrs({
+const VisitStore = styled(StyledButton).attrs({
   type: 'submit'
 })`
   width: 100%;

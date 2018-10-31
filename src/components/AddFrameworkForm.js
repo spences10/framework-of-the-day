@@ -28,7 +28,7 @@ const FrameworkEdit = styled.form`
   justify-items: center;
 `
 
-const AddItem = StyledButton.extend.attrs({
+const AddItem = styled(StyledButton).attrs({
   type: 'submit'
 })`
   grid-area: a;
