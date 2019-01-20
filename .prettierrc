@@ -14,10 +14,6 @@
       "options": { "parser": "json" }
     },
     {
-      "files": ".eslintrc.json",
-      "options": { "parser": "json" }
-    },
-    {
       "files": "*.json",
       "options": { "parser": "json" }
     }
