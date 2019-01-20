@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { StyledButton } from '../theme/components'
-
 import { getFunName } from '../helpers'
+// import Dump from './Dump'
 
 const StoreForm = styled.form`
   background: ${props => props.theme.white};
@@ -58,8 +58,9 @@ class StorePicker extends React.Component {
   render() {
     return (
       <StoreForm onSubmit={this.goToStore}>
+        {/* <Dump props={this.props} /> */}
         <FormTitle>Please Enter a Store</FormTitle>
-        <StoreName innerRef={input => (this.name = input)} />
+        <StoreName ref={input => (this.name = input)} />
         <VisitStore>
           Visit Store{' '}
           <span role="img" aria-label="pointy hand">
