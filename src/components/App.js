@@ -1,17 +1,13 @@
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 import styled from 'styled-components'
-
-import { media, GlobalStyle } from '../theme/globalStyle'
-
-import Header from './Header'
-import Order from './Order'
-import Inventory from './Inventory'
-import Framework from './Framework'
-
 import base from '../base'
-
 import sampleFrameworks from '../sample-frameworks'
+import { GlobalStyle, media } from '../theme/globalStyle'
+import Framework from './Framework'
+import Header from './Header'
+import Inventory from './Inventory'
+import Order from './Order'
 
 const FrameworkOfTheDay = styled.div`
   /* min-height: 100vh; */
