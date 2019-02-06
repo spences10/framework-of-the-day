@@ -1,22 +1,22 @@
 {
   "name": "framework-of-the-day",
-  "version": "0.1.74",
+  "version": "0.1.81",
   "private": true,
   "homepage": "https://fotd.scottspence.me",
   "dependencies": {
     "babel-plugin-styled-components": "1.10.0",
-    "firebase": "5.8.0",
+    "firebase": "5.8.2",
     "prop-types": "15.6.2",
     "re-base": "4.0.0",
-    "react": "16.7.0",
-    "react-dom": "16.7.0",
+    "react": "16.8.1",
+    "react-dom": "16.8.1",
     "react-router-dom": "4.3.1",
     "react-scripts": "2.1.3",
     "styled-components": "4.1.3"
   },
   "devDependencies": {
     "eslint-plugin-react": "7.12.4",
-    "prettier": "1.16.1",
+    "prettier": "1.16.4",
     "pretty-quick": "1.10.0"
   },
   "scripts": {
