@@ -1,7 +1,6 @@
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 import styled from 'styled-components'
-
 import { formatPrice } from '../helpers'
 
 const OrderWrapper = styled.div`
@@ -62,7 +61,8 @@ class Order extends React.Component {
       return (
         <OrderList key={key}>
           Sorry, {framework ? framework.name : 'framework'} is now
-          depreciated!<RemoveButton
+          depreciated!
+          <RemoveButton
             onClick={() => this.props.removeFromOrder(key)}>
             &times;
           </RemoveButton>

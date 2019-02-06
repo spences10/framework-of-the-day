@@ -1,9 +1,9 @@
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 import styled from 'styled-components'
-
-import { StyledButton } from '../theme/components'
 import { getFunName } from '../helpers'
+import { StyledButton } from '../theme/components'
+
 // import Dump from './Dump'
 
 const StoreForm = styled.form`
