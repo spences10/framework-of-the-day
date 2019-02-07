@@ -1,7 +1,6 @@
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 import styled from 'styled-components'
-
 import { StyledButton } from '../theme/components'
 
 const FrameworkList = styled.li`
@@ -79,8 +78,7 @@ class Framework extends React.Component {
         <FrameworkDesc>{details.desc}</FrameworkDesc>
         <AddToOrder
           onClick={() => this.props.addToOrder(index)}
-          disabled={!isAvailable}
-        >
+          disabled={!isAvailable}>
           {buttonText}
         </AddToOrder>
       </FrameworkList>
