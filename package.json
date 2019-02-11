@@ -1,12 +1,12 @@
 {
   "name": "framework-of-the-day",
-  "version": "0.1.83",
+  "version": "0.1.84",
   "private": true,
   "homepage": "https://fotd.scottspence.me",
   "dependencies": {
     "babel-plugin-styled-components": "1.10.0",
     "firebase": "5.8.2",
-    "prop-types": "15.7.0",
+    "prop-types": "15.7.1",
     "re-base": "4.0.0",
     "react": "16.8.1",
     "react-dom": "16.8.1",
