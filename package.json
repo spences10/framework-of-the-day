@@ -1,6 +1,6 @@
 {
   "name": "framework-of-the-day",
-  "version": "0.1.150",
+  "version": "0.1.151",
   "private": true,
   "homepage": "https://fotd.scottspence.me",
   "dependencies": {
@@ -17,7 +17,7 @@
   "devDependencies": {
     "eslint-plugin-react": "7.16.0",
     "prettier": "1.18.2",
-    "pretty-quick": "1.11.1"
+    "pretty-quick": "2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
