@@ -1,6 +1,6 @@
 {
   "name": "framework-of-the-day",
-  "version": "0.1.230",
+  "version": "0.1.231",
   "private": true,
   "homepage": "https://fotd.scottspence.me",
   "dependencies": {
@@ -8,8 +8,8 @@
     "firebase": "9.6.11",
     "prop-types": "15.8.1",
     "re-base": "4.0.0",
-    "react": "18.0.0",
-    "react-dom": "18.0.0",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
     "react-router-dom": "6.3.0",
     "react-scripts": "5.0.1",
     "styled-components": "4.4.1"
